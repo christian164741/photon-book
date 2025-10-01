@@ -1,0 +1,51 @@
+\documentclass[10pt]{book}
+\usepackage{../styles/weltbuch_eng}
+
+
+
+% Hyperref bitte im main.tex lassen (sollte fast zuletzt geladen werden)
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=blue, citecolor=teal, urlcolor=magenta}
+\begin{document}
+%	\begin{titlepage}
+%	\centering
+%	\includegraphics[width=\textwidth]{bilder/cover.png} % Pfad und Dateiname anpassen
+%\end{titlepage}
+
+	
+	\hyphenation{ex-is-ts}
+	%\maketitle
+	\include{Vorwort}     % Insert your translated preface here
+	\tableofcontents
+	%\maketitle
+	
+	\include{chapters/chapter01_en}
+	\include{chapters/chapter02_en}
+	\include{chapters/chapter03_en}
+	\include{chapters/chapter04_en}
+	\include{chapters/chapter05_en}
+	\include{chapters/chapter06_en}
+	\include{chapters/chapter07_en}
+	\include{chapters/chapter08_en}
+	\include{appendix/appendix-A_en}
+		\include{appendix/appendix-B_en}
+		\include{appendix/appendix-C}
+	
+	% Bibliography
+	%\bibliographystyle{plainnat}        % remove if using biblatex
+	%\bibliography{literature/literature} % replace if using biblatex
+	\printbibliography[title=References]
+	\addcontentsline{toc}{chapter}{References}
+	
+	\clearpage
+	\phantomsection
+	\addcontentsline{toc}{chapter}{Index}
+	\renewcommand{\indexname}{Index}
+	\cleardoublepage
+	\printindex
+	
+	%\include{impressum}
+\end{document}
+
+
+

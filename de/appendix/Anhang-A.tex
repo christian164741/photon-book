@@ -1,0 +1,1041 @@
+
+\cleardoublepage
+\appendix
+\renewcommand{\thechapter}{A}
+
+\renewcommand{\thesection}{\Alph{chapter}.\arabic{section}}
+
+\chapter{Mathematische Hintergründe und Herleitungen}
+\label{anhangA}
+
+In diesem Anhang werden die im Haupttext angesprochenen physikalischen Konzepte
+formal und mathematisch vertieft. Ziel ist es, die didaktische Lesbarkeit der
+Kapitel nicht zu beeinträchtigen und zugleich interessierten Lesern die
+vollständigen Herleitungen zugänglich zu machen. 
+
+Die Abschnitte sind thematisch nach den zentralen Eigenschaften des Photons
+gegliedert, darunter Energie-Impuls-Relation, Massehypothese, Helizität und
+Polarisation.\index{Photon!Eigenschaften} Auf diese Weise bildet der Anhang eine Brücke zwischen den
+intuitiven Erklärungen im Haupttext und der mathematischen Strenge der
+Quantenfeldtheorie.
+
+%\section{Kapitel I}
+\phantomsection
+\section{Energie- und Impulsrelation des Photons}\index{Energie-Impuls-Relation!Photon}
+\label{anhangA:energie_impuls}
+
+In diesem Abschnitt wird formal hergeleitet, warum ein Photon die Energie
+\[
+E = h f
+\]
+und den Impuls
+\[
+p = \frac{h}{\lambda}
+\]
+besitzt. Ausgangspunkt sind die Maxwell-Gleichungen und deren Wellengleichung.
+Über den Poynting-Vektor und die Energiedichte des elektromagnetischen Feldes
+wird gezeigt, dass die Quantisierung der Felder zu diskreten Energieportionen
+führt. Diese Herleitung ergänzt die intuitive Darstellung im Haupttext
+(Kapitel~I).
+
+\section{Das elektromagnetische Feld in der relativistischen Formulierung}\index{Elektromagnetisches Feld!relativistische Formulierung}\index{Feldstärketensor}\index{Lagrangedichte}
+\label{anhangA:feldtheorie}
+
+Hier erfolgt die Einführung in die formale Beschreibung des elektromagnetischen
+Feldes:
+
+\begin{itemize}
+	\item Viererpotential $A^\mu = (\phi, \vec{A})$
+	\item Feldstärketensor $F^{\mu\nu} = \partial^\mu A^\nu - \partial^\nu A^\mu$
+	\item Antisymmetrie-Eigenschaft $F^{\mu\nu} = -F^{\nu\mu}$
+	\item Lagrangedichte
+	\[
+	\mathcal{L} = -\frac{1}{4} F_{\mu\nu}F^{\mu\nu}
+	\]
+	\item Zusammenhang zur Quantisierung: Photon als Eichboson des $U(1)$
+	Elektromagnetismus
+\end{itemize}
+
+Dies liefert den mathematischen Unterbau zur Aussage im Haupttext, dass
+Photonen „Anregungen des elektromagnetischen Feldes“ sind.
+
+\section{Formale Beschreibung verschränkter Photonen}\index{Photonen!Verschränkung}\index{Dirac-Notation}\index{SPDC (Spontane parametrische Fluoreszenz)}
+\label{anhangA:verschr}
+
+Die im Haupttext (Kapitel~I) dargestellten Experimente zur Erzeugung
+verschränkter Photonenpaare (SPDC) lassen sich formal in der
+Dirac-Notation beschreiben. Ein typisches verschränktes
+Polarisations-Zustandspaar lautet:
+
+\[
+|\psi\rangle = \frac{1}{\sqrt{2}}\big( |H\rangle_A \otimes |V\rangle_B +
+|V\rangle_A \otimes |H\rangle_B \big)
+\]
+
+\begin{itemize}
+	\item $|H\rangle$: horizontal polarisierter Zustand
+	\item $|V\rangle$: vertikal polarisierter Zustand
+	\item Indizes $A, B$: die beiden Photonen
+\end{itemize}
+
+Dieser Formalismus macht die im Experiment beobachteten Korrelationen
+transparent und zeigt, warum klassische Modelle mit verborgenen Variablen
+nicht ausreichen.
+
+%Kapitel II
+%\section{Kapitel II}
+\section{Herleitung des Rayleigh-Jeans-Gesetzes}\index{Rayleigh-Jeans-Gesetz!Herleitung}\index{Rayleigh, Lord}\index{Jeans, James}\index{Ultraviolett-Katastrophe}
+\label{anhangA:rayleigh}
+
+Das Rayleigh-Jeans-Gesetz ergibt sich, wenn man die elektromagnetischen
+Moden in einem Hohlraum wie harmonische Oszillatoren behandelt:
+
+\begin{enumerate}
+	\item Man zählt die Anzahl der stehenden Wellen im Würfelvolumen $V$.
+	\item Jede Mode besitzt zwei Polarisationsrichtungen.
+	\item Nach dem Ausrüstungsprinzip der klassischen Thermodynamik trägt
+	jede Freiheitsgrad im Gleichgewicht die mittlere Energie $kT$.
+\end{enumerate}
+
+Die Anzahl der Moden zwischen den Frequenzen $\nu$ und $\nu + d\nu$ ist
+\[
+g(\nu)\, d\nu = \frac{8\pi V \nu^2}{c^3}\, d\nu.
+\]
+
+Multipliziert mit $kT$ ergibt dies die spektrale Energiedichte
+\[
+u(\nu, T) = \frac{8\pi \nu^2}{c^3}\, kT,
+\]
+die in Wellenlängenform $u(\lambda, T) = \tfrac{8\pi kT}{\lambda^4}$ lautet.
+Das Gesetz stimmt bei langen Wellenlängen, divergiert jedoch für
+$\lambda \to 0$ – die \emph{Ultraviolett-Katastrophe}.
+
+\section{Das Wiensche Strahlungsgesetz}\index{Wiensches Strahlungsgesetz}\index{Wien, Wilhelm}
+\label{anhangA:wien}
+
+Wilhelm Wien leitete 1896 eine Näherung für die Schwarzkörperstrahlung her.
+Die Argumentation beruhte auf:
+
+\begin{itemize}
+	\item Thermodynamischen Überlegungen: Adiabatische Kompression eines
+	Hohlraums verschiebt das Strahlungsspektrum.
+	\item Dimensionsanalyse: Die Intensität hängt von $T$ und $\lambda$ ab
+	und muss die korrekten Einheiten haben.
+\end{itemize}
+
+Das Resultat war
+\[
+u(\lambda, T) = \frac{c_1}{\lambda^5}\,
+\exp\!\left(-\frac{c_2}{\lambda T}\right),
+\]
+mit Konstanten $c_1, c_2$, die erst durch Plancks Ansatz vollständig
+verstanden wurden. Das Wiensche Gesetz stimmt im UV-Bereich,
+versagt jedoch bei langen Wellenlängen.
+
+\section{Herleitung des Planckschen Strahlungsgesetzes}\index{Plancksches Strahlungsgesetz!Herleitung}\index{Planck, Max}
+\label{anhangA:planck}
+
+Planck kombinierte die Grenzgesetze von Rayleigh-Jeans und Wien und
+führte die Quantisierung der Energie ein:
+
+\begin{itemize}
+	\item Ein Oszillator kann nur Energien $E_n = nh\nu$ annehmen.
+	\item Die Besetzungswahrscheinlichkeit folgt der Boltzmann-Verteilung.
+\end{itemize}
+
+Die mittlere Energie pro Oszillator lautet
+\[
+\langle E \rangle = \frac{h\nu}{e^{h\nu/kT} - 1}.
+\]
+
+Multipliziert mit der Modenzahl
+$g(\nu)\, d\nu = \tfrac{8\pi V \nu^2}{c^3}\, d\nu$
+ergibt dies die Strahlungsdichte
+\[
+u(\nu, T) = \frac{8\pi \nu^2}{c^3}\,
+\frac{h\nu}{e^{h\nu/kT} - 1}.
+\]
+
+Dies ist das \textbf{Plancksche Strahlungsgesetz}, das für alle Frequenzen
+mit dem Experiment übereinstimmt.
+
+\section{Mathematische Beschreibung des Photoeffekts}\index{Photoeffekt!Mathematische Beschreibung}
+\label{anhangA:photoeffekt}
+
+Beim Photoeffekt absorbiert ein Elektron in einem Metall ein Photon
+mit Energie $E_\gamma = h\nu$. Um das Elektron aus dem Metall zu lösen,
+muss die \emph{Austrittsarbeit} $A$ überwunden werden. Die überschüssige
+Energie geht in die kinetische Energie des Elektrons über:
+
+\[
+E_\text{kin} = h\nu - A.
+\]
+
+Daraus folgt eine \emph{Grenzfrequenz}
+\[
+\nu_\text{min} = \frac{A}{h},
+\]
+unterhalb derer keine Elektronen ausgelöst werden – unabhängig von der
+Lichtintensität. Diese lineare Beziehung zwischen Elektronenenergie und
+Lichtfrequenz wurde in Millikans Experimenten (1916) präzise bestätigt.\index{Millikan, Robert A.}
+%\section{Kapitel III}
+\section{Photonenimpuls}\index{Photon!Impuls}\index{Energie-Impuls-Relation}
+\label{anhangA:impuls}
+
+Der Impuls eines Photons lässt sich aus der relativistischen Energie-Impuls-Relation ableiten. Für beliebige Teilchen gilt
+\[
+E^2 = (pc)^2 + (m_0 c^2)^2 ,
+\]
+wobei $E$ die Energie, $p$ der Impuls, $c$ die Lichtgeschwindigkeit und $m_0$ die Ruhemasse ist.
+
+\begin{itemize}
+	\item Für masselose Teilchen ($m_0 = 0$) reduziert sich diese Gleichung zu
+	\[
+	E = p c.
+	\]
+	
+	\item Für das Photon gilt zugleich die Quantisierungsbedingung
+	\[
+	E = h f = \frac{h c}{\lambda}.
+	\]
+	
+	\item Setzt man beide Ausdrücke für $E$ gleich, folgt unmittelbar
+	\[
+	p = \frac{E}{c} = \frac{h}{\lambda}.
+	\]
+\end{itemize}
+
+\noindent
+Damit ist der Impuls eines Photons direkt an seine Wellenlänge gekoppelt. Diese Beziehung ist eine der zentralen Brücken zwischen Wellen- und Teilchenbeschreibung des Lichts.
+
+\section{Energie-Impuls-Relation des Photons}\index{Photon!Massehypothese}\index{Photon!Masselosigkeit}\index{Energie-Impuls-Relation}
+\label{anhangA:masse}
+
+Für relativistische Teilchen gilt allgemein die Energie-Impuls-Relation:
+\[
+E^2 = (pc)^2 + (m c^2)^2.
+\]
+
+\begin{itemize}
+	\item \textbf{Masseloses Photon:}  
+	Setzt man $m=0$, so folgt unmittelbar:
+	\[
+	E = p c.
+	\]
+	Dies steht im Einklang mit den Relationen $E = h f$ und $p = h/\lambda$.
+	
+	\item \textbf{Hypothetisch massives Photon:}  
+	Angenommen, das Photon hätte eine Ruhemasse $m_\gamma \neq 0$, so ergäbe sich:
+	\[
+	E^2 = (p c)^2 + (m_\gamma c^2)^2.
+	\]
+	Ein solches Photon würde sich stets langsamer als $c$ bewegen, und die Lichtgeschwindigkeit wäre nicht mehr universell konstant. 
+	Bereits minimale Abweichungen von $m=0$ würden sich in Präzisionsexperimenten zeigen.
+\end{itemize}
+
+Experimentell konnte bisher nur eine obere Schranke für die Photonenmasse gesetzt werden. Aktuelle Grenzen liegen bei
+\[
+m_\gamma < 10^{-18}\,\text{eV}/c^2,
+\]
+was faktisch bedeutet, dass das Photon als masselos angesehen wird.
+
+\section{Helizität des Photons}\index{Photon!Helizität}\index{Spin}
+\label{anhangA:helizitaet}
+
+Das Photon besitzt Spin $s=1$, doch aufgrund seiner Masselosigkeit sind nicht alle drei Spinprojektionen ($m_s=-1,0,+1$) physikalisch realisierbar. 
+
+\begin{itemize}
+	\item \textbf{Allgemeiner Spin-1-Zustand:}  
+	Für massive Spin-1-Teilchen sind drei Polarisationszustände möglich, entsprechend den Projektionen $m_s=-1,0,+1$ auf die Bewegungsrichtung.
+	
+	\item \textbf{Masseloses Photon:}  
+	Da das Photon keine Ruhemasse hat, existiert kein Ruhesystem, in dem man die Spinausrichtung unabhängig vom Bewegungsvektor definieren könnte.  
+	Mathematisch erzwingt die Eichinvarianz der Maxwellgleichungen (bzw. des QED-Formalismus), dass die longitudinale Komponente ($m_s=0$) verschwindet.
+	
+	\item \textbf{Helizitätszustände:}  
+	Übrig bleiben nur zwei mögliche Zustände:
+	\begin{align*}
+		\lambda& = +1 \quad \text{(Rechtsdrehung, Rechtspolarisation)}\\
+		\lambda &= -1 \quad \text{(Linksdrehung, Linkspolarisation)}
+	\end{align*}
+	
+	Diese werden als die beiden Helizitätszustände des Photons bezeichnet.
+\end{itemize}
+
+\noindent
+Damit ist das Photon ein zweizuständiges masseloses Boson, dessen Freiheitsgrade vollständig durch die beiden möglichen Helizitäten beschrieben werden.
+
+\section{Polarisation des Photons}\index{Photon!Polarisation}\index{Dirac-Notation}\index{Jones-Vektor}
+\label{anhangA:polarisation}
+
+Die Polarisation beschreibt die transversale Schwingungsrichtung des elektrischen Feldes eines Photons. Formal lässt sich dieser Freiheitsgrad auf zwei Arten darstellen:
+
+\begin{itemize}
+	\item \textbf{Dirac-Notation:}  
+	In der Quantenmechanik werden Polarisationszustände als Basisvektoren in einem zweidimensionalen Hilbertraum notiert:  
+	\[
+	|H\rangle = \begin{pmatrix}1 \\ 0\end{pmatrix}, \qquad
+	|V\rangle = \begin{pmatrix}0 \\ 1\end{pmatrix},
+	\]
+	wobei $|H\rangle$ für horizontale und $|V\rangle$ für vertikale Polarisation steht.  
+	Beliebige Polarisationszustände lassen sich als Linearkombination schreiben:  
+	\[
+	|\psi\rangle = \alpha |H\rangle + \beta |V\rangle, \quad |\alpha|^2 + |\beta|^2 = 1.
+	\]
+	
+	\item \textbf{Jones-Vektoren:}  
+	In der klassischen Optik wird derselbe Zustand durch \emph{Jones-Vektoren} beschrieben:  
+	\[
+	\vec{E} = \begin{pmatrix} E_x \\ E_y \end{pmatrix},
+	\]
+	wobei $E_x$ und $E_y$ komplexe Amplituden der elektrischen Feldkomponenten in $x$- und $y$-Richtung sind.  
+	Auch hier gilt: normiert man die Intensität, so entspricht dies der Normierung des Zustandsvektors in der Dirac-Notation.
+\end{itemize}
+
+\noindent
+Beide Beschreibungen sind äquivalent – die Dirac-Notation betont den quantenmechanischen Zustandsraum, während die Jones-Vektoren die klassische elektromagnetische Wellenoptik widerspiegeln.  
+Die Verknüpfung dieser Darstellungen ist in der Quantenoptik ein zentrales Werkzeug.
+%\section{Kapitel IV}
+\section{Herleitung der Einstein-Gleichung beim Photoeffekt}
+\label{anhangA:photoeffekt}
+
+Die Einstein-Gleichung\index{Einstein-Gleichung}\index{Photoeffekt}
+\[
+E_{\text{kin}} = h \nu - A
+\]
+ergibt sich aus einer einfachen Energiebilanz zwischen Photon\index{Photon} und Elektron\index{Elektron}.
+
+\begin{enumerate}
+	\item Ein Photon besitzt die Energie
+	\[
+	E_{\text{Photon}} = h \nu,
+	\]
+	wobei \( h \) das Plancksche Wirkungsquantum\index{Plancksches Wirkungsquantum}\index{Planck, Max} und \( \nu \) die Frequenz\index{Frequenz} des einfallenden Lichts ist.
+	
+	\item Um ein Elektron aus dem Metall zu lösen, muss die \textbf{Austrittsarbeit} \( A \)\index{Austrittsarbeit} überwunden werden. Diese entspricht der minimalen Bindungsenergie der Elektronen im Festkörper.
+	
+	\item Bleibt nach Überwindung von \( A \) Energie übrig, so erscheint sie als kinetische Energie\index{Kinetische Energie} des Elektrons:
+	\[
+	E_{\text{kin}} = E_{\text{Photon}} - A.
+	\]
+	
+	\item Damit folgt direkt:
+	\[
+	E_{\text{kin}} = h \nu - A.
+	\]
+\end{enumerate}
+
+\textbf{Bemerkung:}  
+Wird zusätzlich eine Gegenspannung \( U \)\index{Gegenspannung} angelegt, so gilt
+\[
+eU = h \nu - A,
+\]
+wobei \( e \) die Elementarladung\index{Elementarladung} ist. Diese Form erlaubt eine direkte experimentelle Bestimmung von \( h \) durch Messung der Stoppspannung\index{Stoppspannung} als Funktion der Frequenz.
+
+\section{Planck–Einstein-Beziehung \texorpdfstring{$E = h\nu$}{E = hν}}
+\label{anhangA:planckEinstein}
+\index{Planck–Einstein-Beziehung}
+
+\textbf{Ziel.} Wir begründen, warum ein einzelnes Lichtquant (Photon) die Energie
+\[
+E = h\nu = \hbar \omega
+\]
+trägt.
+
+\subsection*{Weg 1: Quantisierung der Normalmoden des elektromagnetischen Feldes.}
+\phantomsection
+Das freie elektromagnetische Feld\index{Elektromagnetisches Feld} in einem Volumen \(V\) lässt sich in ebene Normalmoden mit Kreisfrequenzen \(\omega_{\mathbf{k}}\) zerlegen. Jede Mode entspricht einem harmonischen Oszillator\index{Harmonischer Oszillator} mit Hamiltonoperator
+\[
+\hat H_{\mathbf{k}}=\hbar \omega_{\mathbf{k}}\!\left(\hat a_{\mathbf{k}}^\dagger \hat a_{\mathbf{k}}+\tfrac12\right).
+\]
+Die Eigenwerte sind \((n+\tfrac12)\hbar\omega_{\mathbf{k}}\), \(n\in \mathbb{N}_0\). 
+Eine Anregung \(\Delta n = 1\) erhöht die Energie exakt um \(\Delta E = \hbar \omega\). 
+Diese Energiezunahme identifizieren wir mit \emph{einem Photon} in dieser Mode:
+\[
+E_{\text{Photon}}=\hbar\omega=h\nu.
+\]
+
+\subsection*{Weg 2: Von Plancks Quantenhypothese zu Einsteins Lichtquant.}
+\phantomsection
+Planck\index{Planck, Max} postulierte 1900 für Materieoszillatoren diskrete Energien \(E_n=n h\nu\).
+Einstein\index{Einstein, Albert} übertrug 1905 die Quantisierung auf das \emph{Strahlungsfeld} selbst: die Energie der Strahlung verhält sich, als wäre sie in räumlich lokalisierte \emph{Energiepakete} der Größe \(h\nu\) gebündelt. 
+Nur so lassen sich u.\,a. Entropieeigenschaften Wiensches Strahlungsgesetz\index{Wiensches Strahlungsgesetz}) und der Photoeffekt konsistent erklären. 
+Damit folgt für ein einzelnes Lichtquant:
+\[
+E_{\text{Photon}} = h\nu.
+\]
+
+\subsection*{Konsequenzen.}
+\phantomsection
+(i) Die Photonenenergie hängt \emph{nur} von der Frequenz ab (nicht von der Intensität\index{Intensität}). 
+(ii) In Verbindung mit \(E_{\text{kin}}=h\nu-A\) erklärt dies die Grenzfrequenz\index{Grenzfrequenz} beim Photoeffekt. 
+(iii) Zusammen mit der Feldquantisierung führt dies zu Teilchenzahloperator \(\hat N=\hat a^\dagger \hat a\)\index{Teilchenzahloperator} und einer klaren Zuweisung der Energie pro Photon.
+
+\section{Herleitung der Stoppspannungsgleichung}
+\label{anhangA:stoppspannung}
+
+\textbf{Ziel.} Zusammenhang zwischen Photonenenergie, Austrittsarbeit und messbarer Gegenspannung \(U\).
+
+\subsection*{Ausgangspunkt.}
+\phantomsection
+Die Energiebilanz beim Photoeffekt lautet
+\[
+E_{\text{Photon}} = h\nu = A + E_{\text{kin,max}}.
+\]
+
+\subsection*{Experimentelles Prinzip.}
+\phantomsection
+In einer Fotozelle\index{Fotozelle} wird zwischen Kathode\index{Kathode} und Anode\index{Anode} eine \emph{Gegenspannung} \(U\) angelegt.  
+Elektronen mit kinetischer Energie \(E_{\text{kin}}\) müssen Arbeit \(eU\) verrichten, um die Anode zu erreichen.  
+Bei der \textbf{Stoppspannung} \(U_0\)\index{Stoppspannung} ist die Energie gerade aufgebraucht:
+\[
+E_{\text{kin,max}} = eU_0.
+\]
+
+\subsection*{Herleitung.}
+\phantomsection
+Setzt man dies in die Energiebilanz ein:
+\[
+h\nu = A + eU_0,
+\]
+folgt unmittelbar:
+\[
+eU_0 = h\nu - A.
+\]
+
+\subsection*{Experimentelle Bedeutung.}
+\phantomsection
+- Der Graph \(U_0(\nu)\) ist eine Gerade mit Steigung \(h/e\).  
+- Der Achsenabschnitt liefert die materialabhängige Austrittsarbeit \(A\).  
+- Millikan\index{Millikan, Robert} bestimmte damit 1916 den Wert des Planckschen Wirkungsquantums mit hoher Genauigkeit – und bestätigte Einsteins Hypothese experimentell.
+
+\subsection*{Konsequenz.}
+\phantomsection
+Die Stoppspannung erlaubt eine direkte Messung fundamentaler Naturkonstanten, ohne dass Intensität oder Anzahl der Photonen eine Rolle spielen.
+
+\section{Die Austrittsarbeit}
+\label{anhangA:austrittsarbeit}
+
+Die \textbf{Austrittsarbeit} \( A \) ist die Mindestenergie, die notwendig ist, um ein Elektron aus einem Metall zu lösen. 
+Sie hängt vom Material und der elektronischen Struktur der Oberfläche ab. 
+
+\textbf{Formale Definition:}
+\[
+A = E_{\text{Fermi}} + E_{\text{Bindung}} - E_{\text{Vakuum}}
+\]
+wobei \( E_{\text{Vakuum}} \) das Energieniveau eines Elektrons im Vakuum darstellt.
+
+\textbf{Typische Werte:}
+\begin{itemize}
+	\item Alkalimetalle (z.\,B. Cäsium, Kalium)
+	\item Übergangsmetalle (z.\,B. Eisen, Kupfer)
+	\item Edelmetalle (z.\,B. Platin)
+\end{itemize}
+
+Die Austrittsarbeit erklärt, warum nur Photonen oberhalb einer \emph{Grenzfrequenz} \( \nu_0 = A/h \) Elektronen freisetzen können. 
+Sie ist eine materialspezifische Größe und kann durch Oberflächenzustand, Temperatur oder Beschichtung variieren.
+
+\section{Herleitung der Compton-Formel}
+\label{anhangA:comptonHerleitung}
+
+Die Herleitung der \textbf{Compton-Formel}\index{Compton-Formel} basiert auf Energie- und Impulserhaltung\index{Impulserhaltung} beim Stoß eines Photons mit einem ruhenden Elektron. 
+
+\textbf{Ausgangssituation:}
+\begin{itemize}
+	\item Ein Photon mit Wellenlänge \( \lambda \) trifft auf ein Elektron in Ruhe.
+	\item Nach dem Stoß hat das Photon die Wellenlänge \( \lambda' \) und wird um den Winkel \( \theta \) abgelenkt.
+	\item Das Elektron erhält einen Rückstoßimpuls \( \vec{p}_e \).
+\end{itemize}
+
+\textbf{Erhaltungssätze:}
+\begin{align*}
+	E_\gamma + m_e c^2 &= E'_\gamma + E_e \\
+	\vec{p}_\gamma &= \vec{p'}_\gamma + \vec{p}_e
+\end{align*}
+mit
+\[
+E_\gamma = \frac{hc}{\lambda}, \quad 
+E'_\gamma = \frac{hc}{\lambda'}, \quad 
+p_\gamma = \frac{h}{\lambda}, \quad 
+E_e^2 = (p_e c)^2 + (m_e c^2)^2.
+\]
+
+\textbf{Ergebnis:}
+\[
+\Delta \lambda = \lambda' - \lambda 
+= \frac{h}{m_e c}(1 - \cos \theta).
+\]
+
+Diese Verschiebung ist unabhängig von der Photonenenergie und hängt nur vom Streuwinkel ab. Der Faktor
+\[
+\lambda_C = \frac{h}{m_e c} \approx 2{,}43 \cdot 10^{-12}\,\mathrm{m}
+\]
+wird als \textbf{Compton-Wellenlänge} des Elektrons\index{Compton-Wellenlänge}\index{Compton, Arthur} bezeichnet.
+
+\section{Der Doppelspalt im quantenmechanischen Formalismus}
+\label{anhangA:doppelspalt}
+
+Der Doppelspaltversuch\index{Doppelspaltversuch} mit einzelnen Photonen lässt sich nur mit Hilfe der Quantenmechanik\index{Quantenmechanik} verstehen. 
+Im Gegensatz zur klassischen Wellentheorie\index{Wellentheorie} oder Teilchenmechanik\index{Teilchenmechanik} betrachtet man die \textbf{Wellenfunktion}\index{Wellenfunktion} 
+eines Photons und deren Überlagerung.
+
+\textbf{Superpositionsprinzip:}\index{Superpositionsprinzip}  
+Treffen zwei mögliche Wege \( W_1 \) und \( W_2 \) auf, so gilt für die Gesamtamplitude:
+\[
+\Psi_{\text{gesamt}} = \Psi_{1} + \Psi_{2}.
+\]
+
+\textbf{Darstellung in der Dirac-Notation:}\index{Dirac-Notation}  
+Sei \(|1\rangle\) der Zustand „Photon geht durch Spalt 1“ und \(|2\rangle\) der Zustand „Photon geht durch Spalt 2“.  
+Ohne Messung des Weges gilt:
+\[
+|\psi\rangle = \frac{1}{\sqrt{2}} \left( |1\rangle + |2\rangle \right).
+\]
+
+\section{Antibunching und die Korrelationsfunktion}
+\label{anhangA:antibunching}
+
+Das Phänomen des \textbf{Antibunching}\index{Antibunching} zeigt, dass Photonen \emph{einzeln} emittiert werden. 
+Mathematisch wird dies mit der Korrelationsfunktion zweiter Ordnung\index{Korrelationsfunktion} beschrieben.
+
+\textbf{Definition:}
+\[
+g^{(2)}(\tau) = \frac{\langle I(t) \, I(t+\tau) \rangle}{\langle I(t) \rangle^2},
+\]
+wobei \( I(t) \) die Intensität (bzw. Zählrate) am Detektor ist und \(\tau\) die Zeitverzögerung zwischen zwei Messungen.
+
+\textbf{Antibunching:}
+Bei einer idealen Einzelphotonenquelle\index{Einzelphotonenquelle} findet man:
+\[
+g^{(2)}(0) = 0.
+\]
+
+\textbf{Physikalische Konsequenz:}
+- Antibunching widerspricht jeder klassischen Wellenvorstellung.  
+- Es zeigt die \textbf{Unteilbarkeit des Photons}: entweder wird es hier oder dort nachgewiesen – aber niemals gleichzeitig an zwei Orten.  
+- Damit ist Antibunching ein direkter Beweis für die Quantennatur des Lichts.
+
+\section{Hong--Ou--Mandel-Interferenz\newline
+	 am Strahlteiler}
+\label{anhangA:HOM}
+
+Der \textbf{Hong--Ou--Mandel (HOM)-Effekt}\index{Hong-Ou-Mandel-Effekt}\index{Hong, Chung-ki}\index{Mandel, Leonard} beschreibt die Zwei-Pho\-tonen-Interferenz\index{Zwei-Photonen-Interferenz} identischer Photonen an einem 50:50-Strahlteiler.\index{Strahlteiler}
+Bei perfekter Ununterscheidbarkeit\index{Ununterscheidbarkeit von Photonen} verschwinden Koinzidenzen an den beiden Ausgängen (``HOM-Dip''\index{HOM-Dip}).
+
+\subsection*{Strahlteiler-Transformation (Heisenberg-Bild).}\index{Heisenberg-Bild}
+\phantomsection
+Für die Eingangsmoden \(\hat a,\hat b\) und Ausgangsmoden \(\hat c,\hat d\) eines verlustfreien 50:50-Strahlteilers wählen wir die unitäre Transformation
+\[
+\begin{pmatrix}
+	\hat c \\ \hat d
+\end{pmatrix}
+= \frac{1}{\sqrt{2}}
+\begin{pmatrix}
+	1 & i \\
+	i & 1
+\end{pmatrix}
+\begin{pmatrix}
+	\hat a \\ \hat b
+\end{pmatrix},
+\qquad
+\begin{pmatrix}
+	\hat a \\ \hat b
+\end{pmatrix}
+= \frac{1}{\sqrt{2}}
+\begin{pmatrix}
+	1 & -i \\
+	-i & 1
+\end{pmatrix}
+\begin{pmatrix}
+	\hat c \\ \hat d
+\end{pmatrix}.
+\]
+Für die Erzeugungsoperatoren gilt entsprechend
+\[
+\hat a^\dagger=\frac{\hat c^\dagger - i \hat d^\dagger}{\sqrt{2}},
+\qquad
+\hat b^\dagger=\frac{-i\,\hat c^\dagger + \hat d^\dagger}{\sqrt{2}}.
+\]
+
+\subsection*{Eingangszustand und Ausgangszustand.}
+\phantomsection
+Zwei einzelne Photonen, eins in jeder Eingangs­mode,
+\(|\psi_{\text{in}}\rangle=\hat a^\dagger \hat b^\dagger |0\rangle\),
+werden zu
+\[
+|\psi_{\text{out}}\rangle
+= \hat a^\dagger \hat b^\dagger |0\rangle
+= \frac{1}{2}\,(\hat c^\dagger - i \hat d^\dagger)(-i\,\hat c^\dagger + \hat d^\dagger)\,|0\rangle
+= -\frac{i}{2}\!\left(\hat c^{\dagger 2}+\hat d^{\dagger 2}\right)|0\rangle.
+\]
+Da \(\hat c^\dagger \hat d^\dagger\)-Terme sich exakt auslöschen, enthält der Ausgangszustand \emph{keine} \(|1_c,1_d\rangle\)-Komponente (keine Koinzidenz). Nach Normierung ergibt sich äquivalent
+\[
+|\psi_{\text{out}}\rangle
+\propto |2_c,0_d\rangle \,\pm\, |0_c,2_d\rangle,
+\]
+wobei das relative Vorzeichen nur von der Phasenkonvention des Strahlteilers abhängt, die Physik (Verschwinden der Koinzidenzen) jedoch identisch bleibt.
+
+\subsection*{Unvollständige Überlappung und HOM-Dip.}
+\phantomsection
+Reale Photonen sind zeitlich/spektral/polarisatorisch endliche Wellenpakete. Sei
+\(\Lambda(\tau)=\int\!dt\, f_a(t)\,f_b^*(t+\tau)\)
+die (komplexe) Überlappungsintegral der zeitlichen Moden (Verzögerung \(\tau\)).
+Dann ist die Koinzidenzwahrscheinlichkeit an den Ausgängen
+\[
+P_{\text{coinc}}(\tau)=\frac{1}{2}\Bigl(1-|\Lambda(\tau)|^2\Bigr).
+\]
+Für perfekt überlappende, ununterscheidbare Photonen gilt \(|\Lambda(0)|=1\Rightarrow P_{\text{coinc}}(0)=0\).
+Für zwei gaussförmige Wellenpakete mit Kohärenzzeit \(\tau_c\) ist
+\(|\Lambda(\tau)|^2=\exp[-(\tau/\tau_c)^2]\),
+sodass
+\[
+P_{\text{coinc}}(\tau)=\tfrac{1}{2}\Bigl(1-e^{-(\tau/\tau_c)^2}\Bigr)
+\]
+den charakteristischen \emph{HOM-Dip} zeigt.
+
+\subsection*{Einfluss von Ununterscheidbarkeit.}
+\phantomsection
+Jede Unterscheidbarkeit (Polarisationswinkel \(\Delta\phi\), spektrale oder räumliche Modenfehler) reduziert die Sichtbarkeit \(V\in[0,1]\):
+\[
+P_{\text{coinc}}(\tau)=\frac{1}{2}\Bigl(1- V\,|\Lambda(\tau)|^2\Bigr),
+\qquad
+V=|\langle \xi_a|\xi_b\rangle|^2,
+\]
+wobei \(|\xi_{a,b}\rangle\) alle \emph{internen} Freiheitsgrade (z.\,B. Polarisation) beschreiben.
+
+\subsection*{Bemerkung.}
+\phantomsection
+Das Verschwinden der Koinzidenzen ist kein klassischer Interferenzeffekt von Feldern, sondern eine \emph{Zwei-Photonen-Interferenz} der Wahrscheinlichkeitsamplituden\index{Wahrscheinlichkeitsamplitude}; es beweist die Ununterscheidbarkeit\index{Ununterscheidbarkeit von Photonen} und die bosonische Natur von
+ Photonen.\index{Bosonen}
+ 
+ 
+%\section{Kapitel V}
+\section{Feldformalismus und Viererpotential}
+\label{anhangA:feldformalismus}
+\label{anhangA:viererpotential} % beide Labels zeigen auf dieselbe Stelle
+
+In der Quantenelektrodynamik wird das Photon nicht als klassisches Teilchen,
+sondern als Anregung des \emph{elektromagnetischen Feldes} beschrieben. 
+Dieses Feld wird durch das \textbf{Viererpotential} \( A^\mu(x) \) dargestellt,
+das in der relativistischen Formulierung vier Komponenten umfasst:
+
+\[
+A^\mu(x) = \big( \Phi(x), \, \vec{A}(x) \big) ,
+\]
+
+wobei \( \Phi(x) \) das elektrische Potential und \( \vec{A}(x) \) das magnetische Vektorpotential ist. 
+Die zeitliche und räumliche Komponente vereinigen sich zu einem Lorentz-Vektor.
+
+\subsection*{Feldstärketensor.}
+\phantomsection
+Aus dem Viererpotential erhält man den \textbf{Feldstärketensor}
+
+\[
+F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu ,
+\]
+
+der die physikalischen Felder enthält:
+\[
+\vec{E} = -\nabla \Phi - \frac{\partial \vec{A}}{\partial t}, 
+\quad
+\vec{B} = \nabla \times \vec{A}.
+\]
+
+\subsection*{Lagrangedichte.}
+\phantomsection
+Die Dynamik des elektromagnetischen Feldes ergibt sich aus der
+\textbf{Lagrangedichte}
+
+\[
+\mathcal{L}_{\text{EM}} = - \tfrac{1}{4} F_{\mu\nu} F^{\mu\nu} .
+\]
+
+Über das Prinzip der kleinsten Wirkung führt diese Formulierung auf die 
+Maxwellschen Gleichungen in relativistischer Gestalt.
+
+\subsection*{Eichsymmetrie.}
+\phantomsection
+Das Potential \( A^\mu \) ist nicht eindeutig bestimmt:
+\[
+A^\mu(x) \;\;\rightarrow\;\; A^\mu(x) + \partial^\mu \Lambda(x).
+\]
+Diese Freiheit heißt \textbf{Eichsymmetrie} und stellt sicher, dass nur
+die physikalisch messbaren Größen \( \vec{E} \) und \( \vec{B} \) 
+unabhängig von der Wahl des Potentials sind.
+
+\medskip
+Damit ist das Viererpotential die zentrale mathematische Struktur, aus der
+sowohl die klassische Elektrodynamik als auch die quantisierte Form der QED
+systematisch entwickelt werden können.
+\section{Vom klassischen Feld zur QED}
+\label{anhangA:feld_zu_qed}
+
+Die klassische Elektrodynamik nach Maxwell beschreibt elektrische und 
+magnetische Felder durch kontinuierliche Wellen, die sich im Raum ausbreiten. 
+Das elektromagnetische Feld ist in dieser Sicht eine 
+\emph{deterministische Lösung} der Maxwellschen Gleichungen. 
+
+\subsection*{Grenzen des klassischen Modells.}
+\phantomsection
+Phänomene wie der Photoeffekt oder die Compton-Streuung zeigen jedoch,
+dass Licht nicht beliebig teilbar ist, sondern nur in diskreten 
+Energiepaketen (\( h\nu \)) mit Materie wechselwirkt. 
+Dies deutet auf eine zugrunde liegende Quantennatur des Feldes hin.
+
+\subsection*{Quantisierung des Feldes.}
+\phantomsection
+Die Quantenelektrodynamik (QED) geht über die klassische Theorie hinaus, 
+indem sie das elektromagnetische Feld selbst \emph{quantisiert}. 
+Das bedeutet:
+\begin{itemize}
+	\item Das Potential \( A^\mu(x) \) wird zum Operatorfeld.
+	\item Seine Fourier-Moden entsprechen Erzeugungs- und Vernichtungsoperatoren 
+	für Photonen.
+	\item Die Zustände des Feldes werden im Fock-Raum beschrieben, 
+	mit der Möglichkeit, beliebig viele Photonen in definierten 
+	Moden zu erzeugen.
+\end{itemize}
+
+\subsection*{Neue Perspektive.}
+\phantomsection
+Das Photon erscheint somit als \textbf{Quant des elektromagnetischen Feldes}, 
+nicht mehr als klassisches Teilchen oder Wellenpaket. 
+Wechselwirkungen wie die Streuung zweier Elektronen werden als 
+\emph{Photonenaustausch} verstanden, mathematisch dargestellt 
+durch \textbf{Feynman-Diagramme}. 
+
+\medskip
+Damit schlägt die QED eine Brücke zwischen der klassischen Feldtheorie Maxwells, 
+der Quantenmechanik und der speziellen Relativitätstheorie. 
+Sie liefert ein konsistentes theoretisches Fundament, in dem das Photon 
+als fundamentaler Austauschteilchen-Vektor bosonisch beschrieben wird.
+
+\section{Feldstärketensor \(F_{\mu\nu}\)}
+
+\label{anhangA:feldstaerketensor}
+
+Die Grundlage der relativistischen Formulierung der Elektrodynamik
+ist der \textbf{Feldstärketensor} \( F_{\mu\nu} \).
+Er fasst die elektrischen und magnetischen Felder in einer 
+kovarianten Form zusammen und wird direkt aus dem Viererpotential 
+\( A^\mu(x) \) abgeleitet:
+
+\[
+F_{\mu\nu} \;=\; \partial_\mu A_\nu - \partial_\nu A_\mu .
+\]
+
+\subsection*{Eigenschaften.}
+\phantomsection
+\begin{itemize}
+	\item \( F_{\mu\nu} \) ist \emph{antisymmetrisch}, d.\,h. 
+	\( F_{\mu\nu} = - F_{\nu\mu} \).  
+	\item Er enthält genau sechs unabhängige Komponenten, 
+	die den drei Komponenten des elektrischen Feldes \( \vec{E} \) 
+	und den drei Komponenten des magnetischen Feldes \( \vec{B} \) entsprechen.
+\end{itemize}
+
+\subsection*{Matrixdarstellung.}
+\phantomsection
+In 3+1-Darstellung ergibt sich:
+
+\[
+F_{\mu\nu} = 
+\begin{pmatrix}
+	0      & -E_x & -E_y & -E_z \\
+	E_x    & 0    & -B_z & B_y \\
+	E_y    & B_z  & 0    & -B_x \\
+	E_z    & -B_y & B_x  & 0
+\end{pmatrix}.
+\]
+
+\subsection*{Lorentz-Kovarianz.}
+\phantomsection
+Durch seine Definition ist \( F_{\mu\nu} \) ein Tensor zweiter Stufe
+und transformiert sich wohldefiniert unter Lorentz-Transformationen.
+Damit wird sichergestellt, dass elektrische und magnetische Felder
+keine voneinander unabhängigen Größen sind, sondern je nach 
+Beobachter ineinander übergehen.
+
+\subsection*{Physikalische Bedeutung.}
+\phantomsection
+\begin{itemize}
+	\item Der Feldstärketensor ist die zentrale Größe in der 
+	Lagrangeformulierung der Elektrodynamik.
+	\item Er erlaubt eine kompakte Darstellung der Maxwellschen Gleichungen.
+	\item In der Quantenelektrodynamik bildet er die Grundlage 
+	für die Definition der Photonenfelder und ihrer Wechselwirkungen.
+\end{itemize}
+
+\medskip
+Damit fasst \( F_{\mu\nu} \) die klassischen Felder \( \vec{E} \) und \( \vec{B} \) 
+in einer einheitlichen, relativistisch-invarianten Struktur zusammen.
+\section{EM-Lagrangedichte und Gleichungen der Bewegung}
+\label{anhangA:lagrange_em}
+
+Die Dynamik des elektromagnetischen Feldes lässt sich elegant 
+durch eine \textbf{Lagrangedichte} formulieren. 
+Ausgangspunkt ist der Feldstärketensor \( F_{\mu\nu} \) 
+(siehe Abschnitt~\ref{anhangA:feldstaerketensor}).
+
+\subsection*{Lagrangedichte.}
+\phantomsection
+Die kanonische Form lautet
+\[
+\mathcal{L}_{\text{EM}} \;=\; -\tfrac{1}{4} \, F_{\mu\nu} F^{\mu\nu}.
+\]
+
+\begin{itemize}
+	\item Der Vorfaktor \(-\tfrac{1}{4}\) ist notwendig, um bei der Variation 
+	die richtigen Normierungen zu erhalten.
+	\item Die kontrahierte Form \(F_{\mu\nu} F^{\mu\nu}\) 
+	ist ein Lorentz-Skalar, also invariant unter Lorentztransformationen.
+\end{itemize}
+
+\subsection*{Kopplung an Materie.}
+\phantomsection
+Damit das Feld mit geladenen Teilchen wechselwirken kann,
+fügt man einen Kopplungsterm ein:
+\[
+\mathcal{L}_{\text{int}} \;=\; - j_\mu A^\mu ,
+\]
+wobei \( j_\mu \) der Viererstrom ist.
+
+\subsection*{Variation und Feldgleichungen.}
+\phantomsection
+Wendet man das \textbf{Prinzip der kleinsten Wirkung} auf
+\[
+\mathcal{L} \;=\; -\tfrac{1}{4} F_{\mu\nu}F^{\mu\nu} - j_\mu A^\mu
+\]
+an und variiert nach dem Potential \( A^\mu \), so erhält man:
+\[
+\partial_\nu F^{\mu\nu} \;=\; j^\mu .
+\]
+
+Dies sind die Maxwellschen Gleichungen in kompakter, 
+kovarianter Form. Die inhomogenen Gleichungen
+(\( \nabla \cdot \vec{E} = \rho, \, \nabla \times \vec{B} - \tfrac{\partial \vec{E}}{\partial t} = \vec{j} \))
+sind darin enthalten.
+
+\subsection*{Homogene Gleichungen.}
+\phantomsection
+Die beiden verbleibenden Maxwellschen Gleichungen 
+(\( \nabla \cdot \vec{B} = 0, \, \nabla \times \vec{E} + \tfrac{\partial \vec{B}}{\partial t} = 0 \))
+folgen aus der Definition des Feldstärketensors
+und der Identität
+\[
+\partial_\lambda F_{\mu\nu} + \partial_\mu F_{\nu\lambda} + \partial_\nu F_{\lambda\mu} = 0 .
+\]
+
+\medskip
+Damit zeigt sich, dass die gesamte klassische Elektrodynamik 
+aus einer kompakten Lagrangeformulierung gewonnen werden kann – 
+eine elegante Ausgangsbasis für die Quantisierung im Rahmen der QED.
+\section{Eichsymmetrie, Eichfixierung und \newline Lorenz-Bedingung}
+\label{anhangA:eichsymmetrie}
+
+Ein zentrales Strukturprinzip der Elektrodynamik ist die \textbf{Eichsymmetrie}.
+Sie besagt, dass das Viererpotential \( A^\mu(x) \) nicht eindeutig bestimmt ist,
+sondern bis auf eine sogenannte \emph{Eichtransformation}:
+
+\[
+A^\mu(x) \;\;\rightarrow\;\; A^\mu(x) + \partial^\mu \Lambda(x),
+\]
+
+wobei \( \Lambda(x) \) eine beliebige skalare Funktion ist.
+
+\subsection*{Physikalische Konsequenz.}
+\phantomsection
+\begin{itemize}
+	\item Die beobachtbaren Felder \( \vec{E} \) und \( \vec{B} \) 
+	bleiben unter dieser Transformation unverändert.
+	\item Nur eichinvariante Größen sind physikalisch messbar.
+	\item Ein Masseterm \( \tfrac{1}{2} m^2 A_\mu A^\mu \) 
+	wäre nicht eichinvariant und ist daher ausgeschlossen.
+\end{itemize}
+
+\subsection*{Eichfreiheit und Freiheitsgrade.}
+Ein Vektorfeld \( A^\mu \) besitzt formal vier Komponenten.  
+Die Eichsymmetrie erlaubt es jedoch, überflüssige Freiheitsgrade zu eliminieren:
+\begin{itemize}
+	\item Die Eichtransformation entfernt eine Komponente.
+	\item Die Gleichungen der Bewegung (Lorentz-Invarianz) 
+	eliminieren eine weitere.
+	\item Es bleiben genau zwei unabhängige Freiheitsgrade – 
+	die beiden transversalen Polarisationszustände des Photons.
+\end{itemize}
+
+\subsection*{Eichfixierung.}
+\phantomsection
+Um Rechnungen durchführen zu können, wählt man oft eine spezielle \emph{Eichung}:
+\begin{itemize}
+	\item \textbf{Lorenz-Eichung:} 
+	\(\partial_\mu A^\mu = 0\).  
+	Sie ist Lorentz-kovariant und besonders geeignet für relativistische Formulierungen.
+	\item \textbf{Coulomb-Eichung:} 
+	\(\nabla \cdot \vec{A} = 0\).  
+	Sie wird häufig in der Quantenoptik verwendet.
+\end{itemize}
+
+\subsection*{Lorenz-Bedingung.}
+\phantomsection
+Die Lorenz-Eichung reduziert die Bewegungsgleichungen auf die Form einer 
+Wellen- bzw. D’Alembert-Gleichung:
+\[
+\square A^\mu(x) = j^\mu(x),
+\]
+mit dem d’Alembert-Operator \(\square = \partial_\mu \partial^\mu\).
+Dies macht die Wellennatur des elektromagnetischen Feldes deutlich.
+
+\medskip
+Die Eichsymmetrie ist somit nicht nur ein mathematisches Hilfsmittel, 
+sondern der Grund, warum das Photon \textbf{masselos} ist und 
+genau zwei transversale Polarisationszustände besitzt.
+\section{Warum das Photon masselos ist \newline (Proca-Argument)}
+\label{anhangA:masselosigkeit_proca}
+
+In der klassischen Feldtheorie könnte man für ein Vektorfeld \( A^\mu \) 
+formal einen Masseterm hinzufügen. Die entsprechende Lagrangedichte 
+lautet dann (Proca-Theorie):
+
+\[
+\mathcal{L}_{\text{Proca}} = -\tfrac{1}{4} F_{\mu\nu} F^{\mu\nu} 
++ \tfrac{1}{2} m^2 A_\mu A^\mu .
+\]
+
+\subsection*{Folgen des Masseterms.}
+\phantomsection
+\begin{itemize}
+	\item Die Gleichungen der Bewegung sind modifiziert und führen 
+	auf eine massive Wellengleichung für das Feld.
+	\item Ein massives Spin-1-Feld besitzt \textbf{drei} unabhängige 
+	Polarisationszustände (statt zwei).
+	\item Die Ausbreitungsgeschwindigkeit wäre kleiner als die Lichtgeschwindigkeit.
+\end{itemize}
+
+\subsection*{Eichsymmetrie verletzt.}
+\phantomsection
+Der Masseterm \( \tfrac{1}{2} m^2 A_\mu A^\mu \) 
+ist nicht invariant unter der Eichtransformation
+\[
+A^\mu \;\to\; A^\mu + \partial^\mu \Lambda(x).
+\]
+Damit würde die fundamentale \(U(1)\)-Eichsymmetrie der Elektrodynamik gebrochen.
+
+\subsection*{Experimentelle Evidenz.}
+\phantomsection
+Alle Beobachtungen zeigen, dass:
+\begin{itemize}
+	\item elektromagnetische Wellen sich stets mit Lichtgeschwindigkeit \(c\) ausbreiten,
+	\item das Photon nur zwei transversale Polarisationszustände besitzt,
+	\item und keine Abweichung von perfekter Masselosigkeit festgestellt wurde.
+\end{itemize}
+Daraus folgt, dass die Eichsymmetrie exakt gilt 
+und das Photon eine exakt verschwindende Ruhemasse hat.
+
+\medskip
+Das \textbf{Proca-Argument} zeigt also:  
+Die Eichsymmetrie der QED verbietet einen Masseterm – 
+und zwingt das Photon, masselos zu sein.
+\section{Transversalität und Helizität \( \pm 1 \)}
+\label{anhangA:transversalitaet}
+
+Das Photon ist ein masseloses Spin-1-Teilchen. Seine physikalisch
+zulässigen Polarisationszustände ergeben sich aus der Kombination
+von \textbf{Eichsymmetrie} und \textbf{Lorentz-Invarianz}.
+
+\subsection*{Reduktion der Freiheitsgrade.}
+\phantomsection
+Ein Vektorfeld \( A^\mu \) hat zunächst vier Komponenten.
+\begin{itemize}
+	\item Die Eichfreiheit erlaubt es, eine Komponente durch Wahl 
+	einer Eichung zu eliminieren.
+	\item Die Bewegungsgleichungen (z.\,B. Lorenz-Bedingung 
+	\( \partial_\mu A^\mu = 0 \)) entfernen eine weitere.
+	\item Es bleiben genau \textbf{zwei unabhängige Freiheitsgrade}.
+\end{itemize}
+
+\subsection*{Transversalität.}
+\phantomsection
+Die beiden verbleibenden Polarisationsmoden sind 
+senkrecht zur Ausbreitungsrichtung des Photons.  
+Dies wird als \emph{Transversalität} bezeichnet:
+\[
+\vec{k} \cdot \vec{\epsilon}_\lambda = 0,
+\]
+wobei \( \vec{k} \) der Wellenvektor und 
+\( \vec{\epsilon}_\lambda \) der Polarisationsvektor ist.
+
+\subsection*{Helizität.}
+\phantomsection
+Für ein masseloses Teilchen wie das Photon ist die 
+\textbf{Helizität} – die Projektion des Spins auf die 
+Bewegungsrichtung –
+\[
+h = \frac{\vec{S} \cdot \vec{p}}{|\vec{p}|}
+\]
+eine wohldefinierte, Lorentz-invariante Größe.  
+Das Photon besitzt genau zwei Helizitätszustände:
+\[
+h = +1 \quad \text{und} \quad h = -1 .
+\]
+
+\subsection*{Physikalische Interpretation.}
+\phantomsection
+\begin{itemize}
+	\item Helizität \( +1 \): rechtszirkular polarisierte Photonen.
+	\item Helizität \( -1 \): linkszirkular polarisierte Photonen.
+\end{itemize}
+
+\medskip
+Damit folgt: Das Photon ist \textbf{transversal polarisiert}
+und trägt nur zwei mögliche Helizitäten.  
+Dies ist eine direkte Konsequenz der Eichsymmetrie und der
+Masselosigkeit des Photons 
+(vgl. Abschnitt~\ref{anhangA:masselosigkeit_proca}).
+\section{Virtuelle Photonen und nichtphysikalische\newline  Moden}
+\label{anhangA:virtuelle_moden}
+
+Während reale Photonen nur zwei transversale Helizitätszustände 
+(\( h = \pm 1 \)) besitzen, treten in der Quantenelektrodynamik 
+bei \textbf{virtuellen Photonen} zusätzliche Moden auf. 
+Sie erscheinen in den inneren Linien von Feynman-Diagrammen und 
+sind keine beobachtbaren Teilchen, sondern mathematische Hilfsgrößen 
+im Formalismus.
+
+\subsection*{Nichtphysikalische Komponenten.}
+\phantomsection
+In Propagatoren des Photonfeldes können neben den transversalen
+auch longitudinale oder sogar skalare Anteile vorkommen.  
+Diese entstehen aus der Eichfreiheit des Feldes 
+und sind unvermeidlich, wenn man propagierende Lösungen in allen 
+Komponenten zulässt.
+
+\subsection*{Konsistenz der Theorie.}
+\phantomsection
+Obwohl solche nichtphysikalischen Moden in Zwischenrechnungen 
+auftreten, verschwinden sie in allen \emph{physikalischen Observablen}.  
+Dies geschieht durch:
+\begin{itemize}
+	\item die Eichinvarianz der Theorie,
+	\item die Kopplung nur an den erhaltenen elektrischen Strom \( j^\mu \),
+	\item und die Ward-Identitäten, die sicherstellen, 
+	dass nichttransversale Beiträge herausfallen.
+\end{itemize}
+
+\subsection*{Beispiel: Photon-Propagator.}
+\phantomsection
+Im Feynman-Gauge lautet der Photon-Propagator
+\[
+D_{\mu\nu}(k) = \frac{-i g_{\mu\nu}}{k^2 + i\epsilon} ,
+\]
+der formal auch longitudinale und zeitartige Anteile enthält.  
+In physikalischen Amplituden koppeln diese jedoch so,
+dass sie sich exakt herauskürzen.
+
+\medskip
+\textbf{Fazit:}  
+Virtuelle Photonen sind ein Recheninstrument der QED.  
+Sie können scheinbar nichtphysikalische Moden enthalten, 
+doch Eichsymmetrie und Stromerhaltung garantieren, 
+dass nur die beiden transversalen Helizitätszustände des Photons 
+physikalisch realisiert werden.
