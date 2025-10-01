@@ -312,7 +312,22 @@ TSWLatexianTemp*
 *-tags.tex
 
 # standalone packages
-*.sta
+*.sta# ------------------------------------------
+# Projekt-spezifische Regeln für photon-book
+# ------------------------------------------
+
+# Eigene PDF-Dateien nicht ins Repo (werden lokal erzeugt)
+*.pdf
+
+# Ausnahme: Cover-PNGs sollen im Repo bleiben (z. B. für Vorschau)
+de/cover/*.pdf
+en/cover/*.pdf
+!de/cover/*.png
+!en/cover/*.png
+
+# macOS
+.DS_Store
+
 
 # Makeindex log files
 *.lpz
