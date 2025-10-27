@@ -33,14 +33,16 @@ photon-book/
 ## 📖 Kompilieren
 
 ### 1. Deutsche Version
+```
 cd de
 main.tex
 
-
+```
 ### 2. Englische Version
+```
 cd en
 main_eng.tex
-
+```
 
 👉 In **TeXstudio** reicht es, `main.tex` zu kompilieren, wenn folgende Einstellungen aktiv sind:
 - Bibliographie-Tool: **Biber**
