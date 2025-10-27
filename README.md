@@ -11,7 +11,6 @@ photon-book/
 │
 ├── de/               # Deutsche Version
 │   ├── main.tex
-│   ├── preamble.tex
 │   ├── chapters/
 │   ├── appendix/
 │   ├── bilder/
@@ -19,17 +18,14 @@ photon-book/
 │
 ├── en/               # Englische Version
 │   ├── main.tex
-│   ├── preamble.tex
 │   ├── chapters/
 │   ├── appendix/
-│   ├── figures/
+│   ├── bilder/
 │   └── cover/
 │
-├── styles/           # Zentrale Styles und Makros
-│   ├── boxes.sty     # Box-Definitionen (physikbox, mathebox, …)
-│   ├── macros.sty    # eigene Befehle
-│   ├── index.sty     # Index-Einstellungen (imakeidx/xindy)
-│   └── photonbook.cls# (optional) Dokumentklasse
+├── styles/              # Zentrale Styles und Makros
+│   ├── weltbuch.sty     # deutsche Version
+│   ├── weltbuch_eng.sty #englische Version
 │
 └── README.md
 ```
@@ -37,24 +33,14 @@ photon-book/
 ## 📖 Kompilieren
 
 ### 1. Deutsche Version
-```bash
 cd de
-pdflatex main.tex
-biber main
-makeindex main.idx    # oder xindy, wenn in TeXstudio eingestellt
-pdflatex main.tex
-pdflatex main.tex
-```
+main.tex
+
 
 ### 2. Englische Version
-```bash
 cd en
-pdflatex main.tex
-biber main
-makeindex main.idx    # oder xindy
-pdflatex main.tex
-pdflatex main.tex
-```
+main_eng.tex
+
 
 👉 In **TeXstudio** reicht es, `main.tex` zu kompilieren, wenn folgende Einstellungen aktiv sind:
 - Bibliographie-Tool: **Biber**
@@ -94,3 +80,5 @@ pdflatex main.tex
 
 ✍️ **Autor:** Christian Weilharter, Dipl.-Ing. (FH)  
 📅 Stand: Oktober 2025
+
+- 🌐 Website: [https://mathandphysics.de](https://mathandphysics.de)
