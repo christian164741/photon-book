@@ -72,27 +72,6 @@ bottom=1.125in   % 1.000" + 0.125"
 		%     {\includegraphics[width=1.20in]{authorphoto.png}};
 		% \end{tikzpicture}
 	
-	% --- ISBN + Barcode bottom right with white background ---
-	\begin{tikzpicture}[remember picture,overlay]
-		\node[anchor=south east,
-		xshift=-0.475in, yshift=-0.02in + 0.475in]
-		at (current page.south east) {%
-			\begin{tikzpicture}
-				% White box for background (~2.00" x 1.20")
-				%	\fill[white] (0,0) rectangle (2.00in,1.20in);
-				\node[anchor=south west] at (0,0)
-				{\includegraphics[width=2.00in,height=1.20in]{barcode.png}};
-			\end{tikzpicture}
-		};
-	\end{tikzpicture}
 	
-	% --- ISBN text above/next to barcode ---
-	\begin{tikzpicture}[remember picture,overlay]
-		\node[anchor=south east,
-		xshift=-0.875in, yshift=1.25in + 0.475in]
-		at (current page.south east) {%
-			{\sffamily\small\color{covertext} ISBN 978-3-912302-02-8}
-		};
-	\end{tikzpicture}
 	
 \end{document}
