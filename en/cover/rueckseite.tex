@@ -45,7 +45,7 @@ bottom=1.125in   % 1.000" + 0.125"
 	\end{tikzpicture}
 	
 	% --- Textblock ---
-	{\color{coveraccent}\Large\bfseries Photon – Theorie und Anwendungen}\par
+	{\color{coveraccent}\Large\bfseries Photon – Theory und Applications}\par
 	\vspace{-0.3em}
 	
 	{\color{covertext}
@@ -53,9 +53,9 @@ bottom=1.125in   % 1.000" + 0.125"
 		\justifying
 		\sffamily % moderner Look (entfernen, wenn Serifenschrift gewünscht)
 		\noindent
-		What is a photon—wave, particle, or both? This book takes you from the classical picture of light
-		to quantum mechanics, showing why photons shape both modern technology and fundamental research.
-		Clear, precise, and scientifically sound.
+	Is a photon a wave, a particle—or both? This book takes you from the classical picture of light to quantum mechanics, showing how photons shape modern technology and fundamental research. Clear, precise, and scientifically sound.
+	
+	
 		
 		\medskip
 		\noindent
@@ -63,7 +63,7 @@ bottom=1.125in   % 1.000" + 0.125"
 		
 		\medskip
 		\noindent
-	\emph{Christian Weilharter, Dipl.-Ing.(FH),} combines engineering insight with a passion for physics education.
+	\emph{Christian Weilharter, Dipl.-Ing.(FH),} combines engineering insight with a passion for science education.
 	This book bridges the gap between mathematical depth and clear explanation.
 	}% End text block
 	
@@ -75,27 +75,6 @@ bottom=1.125in   % 1.000" + 0.125"
 		% \end{tikzpicture}
 	
 	% --- ISBN + Barcode unten rechts mit weißer Unterlage ---
-	\begin{tikzpicture}[remember picture,overlay]
-		\node[anchor=south east,
-		xshift=-0.475in, yshift=-0.02in + 0.475in]
-		at (current page.south east) {%
-			\begin{tikzpicture}
-				% Weiße Box als Unterlage (empfohlen ~2.00" x 1.20")
-			%	\fill[white] (0,0) rectangle (2.00in,1.20in);
-				% Barcode-Bild darauf platzieren (genaue Größe einhalten)
-				\node[anchor=south west] at (0,0)
-				{\includegraphics[width=2.00in,height=1.20in]{barcode.png}};
-			\end{tikzpicture}
-		};
-	\end{tikzpicture}
 	
-	% --- ISBN-Text neben/über dem Barcode (optional verschieben) ---
-	\begin{tikzpicture}[remember picture,overlay]
-		\node[anchor=south east,
-		xshift=-0.875in, yshift=1.25in + 0.475in] % etwas über der weißen Box
-		at (current page.south east) {%
-			{\sffamily\small\color{covertext} ISBN 978-3-912302-02-8}
-		};
-	\end{tikzpicture}
 	
 \end{document}
