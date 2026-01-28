@@ -1,0 +1,60 @@
+\documentclass[10pt,oneside]{book} 
+\usepackage{../styles/weltbuch}
+
+
+
+% Hyperref bitte im main.tex lassen (sollte fast zuletzt geladen werden)
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=blue, citecolor=teal, urlcolor=magenta}
+
+\begin{document}
+	
+	% Optional: Titel-/Cover-Seite
+	 \begin{titlepage}
+		  \centering
+		%   
+			\includegraphics[width=1.0\textwidth]{cover/vorderseite.png}
+		 \end{titlepage}
+	
+
+
+	\clearpage
+
+	
+	% Vorwort, ToC
+	\include{vorwort}
+	\tableofcontents
+	
+	% Hauptkapitel
+	\include{chapters/chapter01}
+	\include{chapters/chapter02}
+	\include{chapters/chapter03}
+	\include{chapters/chapter04}
+	\include{chapters/chapter05}
+	\include{chapters/chapter06}
+	\include{chapters/chapter07}
+	\include{chapters/chapter08}
+	
+	% Anhänge
+	\include{appendix/Anhang-A}
+	\include{appendix/Anhang-B}
+	\include{appendix/Anhang-C}
+	
+	% Literatur
+	% Literaturverzeichnis ins Inhaltsverzeichnis aufnehmen
+	\addcontentsline{toc}{chapter}{Literatur} % oder {Literatur} für Deutsch
+	\printbibliography[title=Literatur]       % [title=Literatur] für Deutsch
+	
+	
+	% Index
+	\clearpage
+	\phantomsection
+	\addcontentsline{toc}{chapter}{Stichwortverzeichnis}
+	\renewcommand{\indexname}{Stichwortverzeichnis}
+	\cleardoublepage
+	\printindex
+	
+	% Impressum (optional)
+	% \include{impressum}
+	
+\end{document}

@@ -1,0 +1,998 @@
+\cleardoublepage
+\appendix
+\renewcommand{\thechapter}{A}
+\renewcommand{\thesection}{\Alph{chapter}.\arabic{section}}
+
+
+\chapter{Mathematical Background and Derivations}
+\label{anhangA}
+
+This appendix provides a formal and mathematical deepening of the physical
+concepts discussed in the main text. The aim is to preserve the didactic
+readability of the chapters while at the same time giving interested readers
+access to the complete derivations.  
+
+The sections are thematically structured according to the central properties
+of the photon, including the energy–momentum relation, the mass hypothesis,
+helicity, and polarization.\index{Photon!properties} In this way, the appendix builds a bridge between
+the intuitive explanations in the main text and the mathematical rigor of
+quantum field theory.
+
+%\section{Chapter I}
+\section{Energy–Momentum Relation of the Photon}\index{Energy–momentum relation!photon}
+\label{anhangA:energie_impuls}
+
+This section formally derives why a photon has the energy
+\[
+E = h f
+\]
+and the momentum
+\[
+p = \frac{h}{\lambda}
+\]
+Starting from Maxwell’s equations and their wave equation, it is shown via the
+Poynting vector\index{Poynting vector} and the energy density of the electromagnetic field that
+quantization of the fields leads to discrete energy portions. This derivation
+supplements the intuitive presentation in the main text (Chapter~I).
+
+\section{The Electromagnetic Field in the Relativistic Formulation}\index{Electromagnetic field!relativistic formulation}\index{Field strength tensor}\index{Lagrangian density}
+\label{anhangA:feldtheorie}
+
+Here we introduce the formal description of the electromagnetic field:
+
+\begin{itemize}
+	\item Four-potential $A^\mu = (\phi, \vec{A})$\index{Four-potential}
+	\item Field strength tensor $F^{\mu\nu} = \partial^\mu A^\nu - \partial^\nu A^\mu$\index{Field strength tensor}
+	\item Antisymmetry property $F^{\mu\nu} = -F^{\nu\mu}$
+	\item Lagrangian density\index{Lagrangian density}
+	\[
+	\mathcal{L} = -\frac{1}{4} F_{\mu\nu}F^{\mu\nu}
+	\]
+	\item Connection to quantization: photon as the gauge boson of $U(1)$
+	electromagnetism\index{Gauge boson!U(1)}
+\end{itemize}
+
+This provides the mathematical foundation for the statement in the main text
+that photons are “excitations of the electromagnetic field.”
+
+\section{Formal Description of Entangled Photons}\index{Photons!entanglement}\index{Dirac notation}\index{SPDC (spontaneous parametric down-conversion)}
+\label{anhangA:verschr}
+
+The experiments on the generation of entangled photon pairs (SPDC) presented
+in the main text (Chapter~I) can be formally described in Dirac notation. A
+typical entangled polarization state pair is given by:
+
+\[
+|\psi\rangle = \frac{1}{\sqrt{2}}\big( |H\rangle_A \otimes |V\rangle_B +
+|V\rangle_A \otimes |H\rangle_B \big)
+\]
+
+\begin{itemize}
+	\item $|H\rangle$: horizontally polarized state
+	\item $|V\rangle$: vertically polarized state
+	\item Indices $A, B$: the two photons
+\end{itemize}
+
+This formalism makes the correlations observed in the experiment transparent
+and shows why classical hidden-variable models are not sufficient.
+%\section{Chapter II}
+\section{Derivation of the Rayleigh–Jeans Law}\index{Rayleigh–Jeans law!derivation}\index{Rayleigh, Lord}\index{Jeans, James}\index{Ultraviolet catastrophe}
+\label{anhangA:rayleigh}
+
+The Rayleigh–Jeans law arises when the electromagnetic modes in a cavity are
+treated as harmonic oscillators:
+
+\begin{enumerate}
+	\item Count the number of standing waves in the cubic volume $V$.
+	\item Each mode has two polarization directions.
+	\item According to the equipartition principle of classical thermodynamics,
+	each degree of freedom in equilibrium contributes the mean energy $kT$.
+\end{enumerate}
+
+The number of modes between the frequencies $\nu$ and $\nu + d\nu$ is
+\[
+g(\nu)\, d\nu = \frac{8\pi V \nu^2}{c^3}\, d\nu.
+\]
+
+Multiplied by $kT$, this yields the spectral energy density
+\[
+u(\nu, T) = \frac{8\pi \nu^2}{c^3}\, kT,
+\]
+which, in wavelength form, becomes $u(\lambda, T) = \tfrac{8\pi kT}{\lambda^4}$.
+The law is accurate at long wavelengths but diverges for $\lambda \to 0$ – the
+so-called \emph{ultraviolet catastrophe}.
+
+\section{Wien’s Radiation Law}\index{Wien’s displacement law}\index{Wien, Wilhelm}
+\label{anhangA:wien}
+
+In 1896 Wilhelm Wien derived an approximation for blackbody radiation.
+His reasoning was based on:
+
+\begin{itemize}
+	\item Thermodynamic considerations: adiabatic compression of a cavity shifts
+	the radiation spectrum.
+	\item Dimensional analysis: the intensity depends on $T$ and $\lambda$ and
+	must have the correct units.
+\end{itemize}
+
+The result was
+\[
+u(\lambda, T) = \frac{c_1}{\lambda^5}\,
+\exp\!\left(-\frac{c_2}{\lambda T}\right),
+\]
+with constants $c_1, c_2$, which were only fully understood through Planck’s
+approach. Wien’s law is valid in the UV region but fails at long wavelengths.
+
+\section{Derivation of Planck’s Radiation Law}\index{Planck’s radiation law!derivation}\index{Planck, Max}
+\label{anhangA:planck}
+
+Planck combined the limiting cases of Rayleigh–Jeans and Wien and introduced
+the quantization of energy:
+
+\begin{itemize}
+	\item An oscillator can only take on energies $E_n = nh\nu$.
+	\item The occupation probability follows the Boltzmann distribution.
+\end{itemize}
+
+The mean energy per oscillator is
+\[
+\langle E \rangle = \frac{h\nu}{e^{h\nu/kT} - 1}.
+\]
+
+Multiplied by the mode number
+$g(\nu)\, d\nu = \tfrac{8\pi V \nu^2}{c^3}\, d\nu$
+this gives the energy density
+\[
+u(\nu, T) = \frac{8\pi \nu^2}{c^3}\,
+\frac{h\nu}{e^{h\nu/kT} - 1}.
+\]
+
+This is \textbf{Planck’s radiation law}, which agrees with experiment at all
+frequencies.
+
+\section{Mathematical Description of the Photoelectric Effect}\index{Photoelectric effect!mathematical description}
+\label{anhangA:photoeffekt}
+
+In the photoelectric effect, an electron in a metal absorbs a photon with
+energy $E_\gamma = h\nu$. To release the electron from the metal, the
+\emph{work function} $A$ must be overcome. The excess energy goes into the
+electron’s kinetic energy:
+
+\[
+E_\text{kin} = h\nu - A.
+\]
+
+This leads to a \emph{threshold frequency}
+\[
+\nu_\text{min} = \frac{A}{h},
+\]
+below which no electrons are emitted – independent of light intensity.
+This linear relation between electron energy and light frequency was confirmed
+precisely in Millikan’s experiments (1916).\index{Millikan, Robert A.}
+%\section{Chapter III}
+\section{Photon Momentum}\index{Photon!momentum}\index{Energy–momentum relation}
+\label{anhangA:impuls}
+
+The momentum of a photon can be derived from the relativistic
+energy–momentum relation. For arbitrary particles,
+\[
+E^2 = (pc)^2 + (m_0 c^2)^2 ,
+\]
+where $E$ is the energy, $p$ the momentum, $c$ the speed of light, and $m_0$ the rest mass.
+
+\begin{itemize}
+	\item For massless particles ($m_0 = 0$) this equation reduces to
+	\[
+	E = p c.
+	\]
+	
+	\item For the photon, the quantization condition holds simultaneously:
+	\[
+	E = h f = \frac{h c}{\lambda}.
+	\]
+	
+	\item Equating both expressions for $E$ immediately yields
+	\[
+	p = \frac{E}{c} = \frac{h}{\lambda}.
+	\]
+\end{itemize}
+
+\noindent
+Thus, the momentum of a photon is directly linked to its wavelength. This relation is one of the central bridges between the wave and particle description of light.
+
+\section{Energy–Momentum Relation of the Photon}\index{Photon!mass hypothesis}\index{Photon!masslessness}\index{Energy–momentum relation}
+\label{anhangA:masse}
+
+For relativistic particles, the general energy–momentum relation is
+\[
+E^2 = (pc)^2 + (m c^2)^2.
+\]
+
+\begin{itemize}
+	\item \textbf{Massless photon:}  
+	Setting $m=0$ immediately gives
+	\[
+	E = p c.
+	\]
+	This is consistent with the relations $E = h f$ and $p = h/\lambda$.
+	
+	\item \textbf{Hypothetically massive photon:}  
+	If the photon had a rest mass $m_\gamma \neq 0$, then
+	\[
+	E^2 = (p c)^2 + (m_\gamma c^2)^2.
+	\]
+	Such a photon would always move slower than $c$, and the speed of light would no longer be universally constant.  
+	Even minimal deviations from $m=0$ would be revealed in precision experiments.
+\end{itemize}
+
+Experimentally, only an upper bound for the photon mass has been established so far. Current limits are
+\[
+m_\gamma < 10^{-18}\,\text{eV}/c^2,
+\]
+which effectively means that the photon is considered massless.
+
+\section{Helicity of the Photon}\index{Photon!helicity}\index{Spin}
+\label{anhangA:helizitaet}
+
+The photon has spin $s=1$, but due to its masslessness not all three spin projections ($m_s=-1,0,+1$) are physically realizable. 
+
+\begin{itemize}
+	\item \textbf{General spin-1 state:}  
+	For massive spin-1 particles, three polarization states are possible,
+	corresponding to the projections $m_s=-1,0,+1$ onto the direction of motion.
+	
+	\item \textbf{Massless photon:}  
+	Since the photon has no rest mass, there is no rest frame in which the spin orientation can be defined independently of the momentum vector.  
+	Mathematically, the gauge invariance of Maxwell’s equations (or of the QED formalism) enforces the vanishing of the longitudinal component ($m_s=0$).
+	
+	\item \textbf{Helicity states:}  
+	Two possible states remain:
+	\begin{align*}
+		\lambda &= +1 \quad \text{(right-handed, right circular polarization)}\\
+		\lambda &= -1 \quad \text{(left-handed, left circular polarization)}
+	\end{align*}
+	
+	These are called the two helicity states of the photon.
+\end{itemize}
+
+\noindent
+Thus, the photon is a two-state massless boson whose degrees of freedom are fully described by the two possible helicities.
+
+\section{Polarization of the Photon}\index{Photon!polarization}\index{Dirac notation}\index{Jones vector}
+\label{anhangA:polarisation}
+
+Polarization describes the transverse oscillation direction of a photon’s electric field. Formally, this degree of freedom can be represented in two ways:
+
+\begin{itemize}
+	\item \textbf{Dirac notation:}  
+	In quantum mechanics, polarization states are written as basis vectors in a two-dimensional Hilbert space:  
+	\[
+	|H\rangle = \begin{pmatrix}1 \\ 0\end{pmatrix}, \qquad
+	|V\rangle = \begin{pmatrix}0 \\ 1\end{pmatrix},
+	\]
+	where $|H\rangle$ stands for horizontal and $|V\rangle$ for vertical polarization.  
+	Arbitrary polarization states can be expressed as linear combinations:  
+	\[
+	|\psi\rangle = \alpha |H\rangle + \beta |V\rangle, \quad |\alpha|^2 + |\beta|^2 = 1.
+	\]
+	
+	\item \textbf{Jones vectors:}  
+	In classical optics, the same state is described by \emph{Jones vectors}:  
+	\[
+	\vec{E} = \begin{pmatrix} E_x \\ E_y \end{pmatrix},
+	\]
+	where $E_x$ and $E_y$ are the complex amplitudes of the electric field components in the $x$- and $y$-directions.  
+	Here too, normalizing the intensity corresponds to normalizing the state vector in Dirac notation.
+\end{itemize}
+
+\noindent
+Both descriptions are equivalent — Dirac notation emphasizes the quantum mechanical state space, while Jones vectors reflect the classical electromagnetic wave optics.  
+Linking these representations is a central tool in quantum optics.
+%\section{Chapter IV}
+\section{Derivation of Einstein’s Photoelectric Equation}
+\label{anhangA:photoeffekt}
+
+Einstein’s equation\index{Einstein’s equation}\index{Photoelectric effect}
+\[
+E_{\text{kin}} = h \nu - A
+\]
+follows from a simple energy balance between a photon\index{Photon} and an electron.\index{Electron}
+
+\begin{enumerate}
+	\item A photon carries the energy
+	\[
+	E_{\text{photon}} = h \nu,
+	\]
+	where \( h \) is Planck’s constant\index{Planck’s constant}\index{Planck, Max} and \( \nu \) is the frequency\index{Frequency} of the incident light.
+	
+	\item To liberate an electron from a metal, the \textbf{work function} \( A \)\index{Work function} must be overcome. This corresponds to the minimal binding energy of electrons in the solid.
+	
+	\item If energy remains after overcoming \( A \), it appears as the electron’s kinetic energy:\index{Kinetic energy}
+	\[
+	E_{\text{kin}} = E_{\text{photon}} - A.
+	\]
+	
+	\item Hence, directly:
+	\[
+	E_{\text{kin}} = h \nu - A.
+	\]
+\end{enumerate}
+
+\textbf{Remark.}  
+If a retarding (stopping) voltage \( U \)\index{Stopping potential} is applied, then
+\[
+eU = h \nu - A,
+\]
+where \( e \) is the elementary charge.\index{Elementary charge} This form allows a direct experimental determination of \( h \) by measuring the stopping potential as a function of the frequency.
+
+\section{Planck–Einstein Relation \texorpdfstring{$E = h\nu$}{E = hν}}
+\label{anhangA:planckEinstein}
+\index{Planck–Einstein relation}
+
+\textbf{Goal.} Justify why a single light quantum (photon) carries the energy
+\[
+E = h\nu = \hbar \omega .
+\]
+
+\subsection*{Route 1: Quantizing the normal modes of the electromagnetic field.}
+\phantomsection
+The free electromagnetic field\index{Electromagnetic field} in a volume \(V\) can be decomposed into plane normal modes with angular frequencies \(\omega_{\mathbf{k}}\). Each mode is a harmonic oscillator\index{Harmonic oscillator} with Hamiltonian
+\[
+\hat H_{\mathbf{k}}=\hbar \omega_{\mathbf{k}}\!\left(\hat a_{\mathbf{k}}^\dagger \hat a_{\mathbf{k}}+\tfrac12\right).
+\]
+The eigenvalues are \((n+\tfrac12)\hbar\omega_{\mathbf{k}}\), \(n\in \mathbb{N}_0\). 
+An excitation \(\Delta n = 1\) raises the energy by \(\Delta E = \hbar \omega\). 
+We identify this increase with \emph{one photon} in that mode:
+\[
+E_{\text{photon}}=\hbar\omega=h\nu.
+\]
+
+\subsection*{Route 2: From Planck’s quantum hypothesis to Einstein’s light quantum.}
+\phantomsection
+Planck\index{Planck, Max} postulated in 1900 discrete energies \(E_n=n h\nu\) for matter oscillators. 
+Einstein\index{Einstein, Albert} in 1905 applied quantization to the \emph{radiation field} itself: the energy of radiation behaves as if bundled into spatially localized \emph{energy packets} of size \(h\nu\). 
+Only then can, among other things, the entropy properties behind Wien’s law\index{Wien’s law} and the photoelectric effect be explained consistently. 
+Thus for a single light quantum,
+\[
+E_{\text{photon}} = h\nu .
+\]
+
+\subsection*{Consequences.}
+\phantomsection
+(i) Photon energy depends \emph{only} on frequency (not on intensity\index{Intensity}). 
+(ii) Together with \(E_{\text{kin}}=h\nu-A\) this explains the threshold frequency\index{Threshold frequency} in the photoelectric effect. 
+(iii) With field quantization this leads to the number operator \(\hat N=\hat a^\dagger \hat a\)\index{Number operator} and a clear assignment of energy per photon.
+
+\section{Derivation of the Stopping-Potential Equation}
+\label{anhangA:stoppspannung}
+
+\textbf{Goal.} Connect photon energy, work function, and the measurable retarding voltage \(U\).
+
+\subsection*{Starting point.}
+\phantomsection
+The energy balance in the photoelectric effect is
+\[
+E_{\text{photon}} = h\nu = A + E_{\text{kin,max}}.
+\]
+
+\subsection*{Experimental principle.}
+\phantomsection
+In a photocell,\index{Photocell} a \emph{retarding (stopping) voltage} \(U\)\index{Stopping potential} is applied between cathode\index{Cathode} and anode.\index{Anode}  
+Electrons with kinetic energy \(E_{\text{kin}}\) must do work \(eU\) to reach the anode.  
+At the \textbf{stopping potential} \(U_0\) the energy is just exhausted:
+\[
+E_{\text{kin,max}} = eU_0.
+\]
+
+\subsection*{Derivation.}
+\phantomsection
+Inserting into the balance,
+\[
+h\nu = A + eU_0 \;\Rightarrow\;
+eU_0 = h\nu - A.
+\]
+
+\subsection*{Experimental significance.}
+\phantomsection
+– The graph \(U_0(\nu)\) is a straight line with slope \(h/e\).  
+– The intercept yields the material-dependent work function \(A\).  
+– Millikan\index{Millikan, Robert A.} (1916) determined Planck’s constant with high precision this way, confirming Einstein’s hypothesis.
+
+\subsection*{Consequence.}
+\phantomsection
+The stopping potential enables a direct measurement of fundamental constants, independent of light intensity or photon number.
+
+\section{The Work Function}
+\label{anhangA:austrittsarbeit}
+
+The \textbf{work function} \( A \) is the minimum energy required to free an electron from a metal. 
+It depends on the material and the electronic structure of the surface. 
+
+\textbf{Formal definition:}
+\[
+A = E_{\text{Fermi}} + E_{\text{binding}} - E_{\text{vacuum}},
+\]
+where \( E_{\text{vacuum}} \) is the energy level of an electron in vacuum.
+
+\textbf{Typical categories:}
+\begin{itemize}
+	\item Alkali metals (e.g., cesium, potassium)
+	\item Transition metals (e.g., iron, copper)
+	\item Noble metals (e.g., platinum)
+\end{itemize}
+
+The work function explains why only photons above a \emph{threshold frequency} \( \nu_0 = A/h \) can liberate electrons. 
+It is material-specific and can vary with surface condition, temperature, or coatings.
+
+\section{Derivation of the Compton Formula}
+\label{anhangA:comptonHerleitung}
+
+The derivation of the \textbf{Compton formula}\index{Compton formula} is based on energy and momentum conservation\index{Momentum conservation} in the collision of a photon with a stationary electron. 
+
+\textbf{Setup:}
+\begin{itemize}
+	\item A photon with wavelength \( \lambda \) hits an electron at rest.
+	\item After the collision the photon has wavelength \( \lambda' \) and is scattered by an angle \( \theta \).
+	\item The electron acquires a recoil momentum \( \vec{p}_e \).
+\end{itemize}
+
+\textbf{Conservation laws:}
+\begin{align*}
+	E_\gamma + m_e c^2 &= E'_\gamma + E_e ,\\
+	\vec{p}_\gamma &= \vec{p}\,'_\gamma + \vec{p}_e ,
+\end{align*}
+with
+\[
+E_\gamma = \frac{hc}{\lambda}, \quad 
+E'_\gamma = \frac{hc}{\lambda'}, \quad 
+p_\gamma = \frac{h}{\lambda}, \quad 
+E_e^2 = (p_e c)^2 + (m_e c^2)^2.
+\]
+
+\textbf{Result:}
+\[
+\Delta \lambda = \lambda' - \lambda 
+= \frac{h}{m_e c}(1 - \cos \theta).
+\]
+
+This shift is independent of photon energy and depends only on the scattering angle. The factor
+\[
+\lambda_C = \frac{h}{m_e c} \approx 2.43 \times 10^{-12}\,\mathrm{m}
+\]
+is the \textbf{Compton wavelength} of the electron.\index{Compton wavelength}\index{Compton, Arthur}
+
+\section{The Double-Slit in the \newline Quantum-Mechanical Formalism}
+\label{anhangA:doppelspalt}
+
+The double-slit experiment\index{Double-slit experiment} with single photons can only be understood using quantum mechanics.\index{Quantum mechanics} 
+Unlike classical wave theory\index{Wave theory} or classical particle mechanics,\index{Classical mechanics} one considers the photon’s \textbf{wavefunction}\index{Wavefunction} and its superposition.
+
+\textbf{Superposition principle.}\index{Superposition principle}  
+Given two possible paths \( W_1 \) and \( W_2 \), the total amplitude is
+\[
+\Psi_{\text{total}} = \Psi_{1} + \Psi_{2}.
+\]
+
+\textbf{Dirac-notation representation.}\index{Dirac notation}  
+Let \(|1\rangle\) be “photon goes through slit 1” and \(|2\rangle\) be “photon goes through slit 2.”  
+Without which-path measurement:
+\[
+|\psi\rangle = \frac{1}{\sqrt{2}} \left( |1\rangle + |2\rangle \right).
+\]
+
+\section{Antibunching and the Second-Order Correlation Function}
+\label{anhangA:antibunching}
+
+The phenomenon of \textbf{antibunching}\index{Antibunching} shows that photons are emitted \emph{one by one}. 
+Mathematically, this is described by the second-order correlation function.\index{Correlation function}
+
+\textbf{Definition:}
+\[
+g^{(2)}(\tau) = \frac{\langle I(t) \, I(t+\tau) \rangle}{\langle I(t) \rangle^2},
+\]
+where \( I(t) \) is the intensity (or count rate) at the detector and \(\tau\) the time delay between two measurements.
+
+\textbf{Antibunching.}
+For an ideal single-photon source,\index{Single-photon source}
+\[
+g^{(2)}(0) = 0.
+\]
+
+\textbf{Physical consequences.}
+– Antibunching contradicts any classical wave picture.  
+– It shows the \textbf{indivisibility of the photon}: it is detected here or there — but never simultaneously at two places.  
+– Thus, antibunching is a direct proof of the quantum nature of light.
+
+\section{Hong–Ou–Mandel Interference at a Beam Splitter}
+\label{anhangA:HOM}
+
+The \textbf{Hong–Ou–Mandel (HOM) effect}\index{Hong–Ou–Mandel effect}\index{Hong, Chung-ki}\index{Mandel, Leonard} describes two-photon interference\index{Two-photon interference} of identical photons at a 50:50 beam splitter.\index{Beam splitter}
+For perfect indistinguishability\index{Indistinguishability of photons} the coincidences at the two outputs vanish (“HOM dip”).\index{HOM dip}
+
+\subsection*{Beam-splitter transformation (Heisenberg picture).}\index{Heisenberg picture}
+\phantomsection
+For input modes \(\hat a,\hat b\) and output modes \(\hat c,\hat d\) of a lossless 50:50 beam splitter we choose the unitary map
+\[
+\begin{pmatrix}
+	\hat c \\ \hat d
+\end{pmatrix}
+= \frac{1}{\sqrt{2}}
+\begin{pmatrix}
+	1 & i \\
+	i & 1
+\end{pmatrix}
+\begin{pmatrix}
+	\hat a \\ \hat b
+\end{pmatrix},
+\qquad
+\begin{pmatrix}
+	\hat a \\ \hat b
+\end{pmatrix}
+= \frac{1}{\sqrt{2}}
+\begin{pmatrix}
+	1 & -i \\
+	-i & 1
+\end{pmatrix}
+\begin{pmatrix}
+	\hat c \\ \hat d
+\end{pmatrix}.
+\]
+For the creation operators,
+\[
+\hat a^\dagger=\frac{\hat c^\dagger - i \hat d^\dagger}{\sqrt{2}},
+\qquad
+\hat b^\dagger=\frac{-i\,\hat c^\dagger + \hat d^\dagger}{\sqrt{2}}.
+\]
+
+\subsection*{Input and output states.}
+\phantomsection
+Two single photons, one per input mode,
+\(|\psi_{\text{in}}\rangle=\hat a^\dagger \hat b^\dagger |0\rangle\),
+lead to
+\[
+|\psi_{\text{out}}\rangle
+= \hat a^\dagger \hat b^\dagger |0\rangle
+= \frac{1}{2}\,(\hat c^\dagger - i \hat d^\dagger)(-i\,\hat c^\dagger + \hat d^\dagger)\,|0\rangle
+= -\frac{i}{2}\!\left(\hat c^{\dagger 2}+\hat d^{\dagger 2}\right)|0\rangle.
+\]
+Since the \(\hat c^\dagger \hat d^\dagger\) terms cancel exactly, the output state contains \emph{no} \(|1_c,1_d\rangle\) component (no coincidences). After normalization one may write equivalently
+\[
+|\psi_{\text{out}}\rangle
+\propto |2_c,0_d\rangle \,\pm\, |0_c,2_d\rangle,
+\]
+where the relative sign depends only on the beam-splitter phase convention; the physics (vanishing coincidences) is unchanged.
+
+\subsection*{Imperfect overlap and the HOM dip.}
+\phantomsection
+Real photons are finite wave packets in time/spectrum/polarization. Let
+\(\Lambda(\tau)=\int\!dt\, f_a(t)\,f_b^*(t+\tau)\)
+be the (complex) temporal overlap integral (delay \(\tau\)).
+Then the coincidence probability at the outputs is
+\[
+P_{\text{coinc}}(\tau)=\frac{1}{2}\Bigl(1-|\Lambda(\tau)|^2\Bigr).
+\]
+For perfectly overlapping, indistinguishable photons, \(|\Lambda(0)|=1\Rightarrow P_{\text{coinc}}(0)=0\).
+For two Gaussian wave packets with coherence time \(\tau_c\),
+\(|\Lambda(\tau)|^2=\exp[-(\tau/\tau_c)^2]\),
+so
+\[
+P_{\text{coinc}}(\tau)=\tfrac{1}{2}\Bigl(1-e^{-(\tau/\tau_c)^2}\Bigr)
+\]
+shows the characteristic \emph{HOM dip}.
+
+\subsection*{Role of indistinguishability.}
+\phantomsection
+Any distinguishability (polarization angle \(\Delta\phi\), spectral or spatial mode mismatch) reduces the visibility \(V\in[0,1]\):
+\[
+P_{\text{coinc}}(\tau)=\frac{1}{2}\Bigl(1- V\,|\Lambda(\tau)|^2\Bigr),
+\qquad
+V=|\langle \xi_a|\xi_b\rangle|^2,
+\]
+where \(|\xi_{a,b}\rangle\) collect all \emph{internal} degrees of freedom (e.g., polarization).
+
+\subsection*{Remark.}
+\phantomsection
+The disappearance of coincidences is not a classical field-interference effect but a \emph{two-photon interference} of probability amplitudes,\index{Probability amplitude} proving indistinguishability\index{Indistinguishability of photons} and the bosonic nature of photons.\index{Bosons}
+%\section{Chapter V}
+\section{Field Formalism and Four-Potential}
+\label{anhangA:feldformalismus}
+\label{anhangA:viererpotential} % both labels point to the same spot
+
+In quantum electrodynamics (QED)\index{Quantum electrodynamics (QED)} the photon is not described as a classical particle,
+but rather as an excitation of the \emph{electromagnetic field}\index{Electromagnetic field}. 
+This field is represented by the \textbf{four-potential} \( A^\mu(x) \)\index{Four-potential},
+which in the relativistic formulation comprises four components:
+
+\[
+A^\mu(x) = \big( \Phi(x), \, \vec{A}(x) \big) ,
+\]
+
+where \( \Phi(x) \)\index{Electric potential} is the electric potential and \( \vec{A}(x) \)\index{Magnetic vector potential} is the magnetic vector potential. 
+The temporal and spatial components combine into a Lorentz vector\index{Lorentz vector}.
+
+\subsection*{Field strength tensor.}
+\phantomsection
+From the four-potential one obtains the \textbf{field strength tensor}\index{Field strength tensor}
+
+\[
+F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu ,
+\]
+
+which contains the physical fields:
+\[
+\vec{E} = -\nabla \Phi - \frac{\partial \vec{A}}{\partial t}, 
+\quad
+\vec{B} = \nabla \times \vec{A}.
+\]
+
+\subsection*{Lagrangian density.}
+\phantomsection
+The dynamics of the electromagnetic field are derived from the
+\textbf{Lagrangian density}\index{Lagrangian density}
+
+\[
+\mathcal{L}_{\text{EM}} = - \tfrac{1}{4} F_{\mu\nu} F^{\mu\nu} .
+\]
+
+Through the principle of least action\index{Principle of least action}, this formulation leads to 
+Maxwell’s equations\index{Maxwell's equations}\index{Maxwell, James Clerk} in their relativistic form.
+
+\subsection*{Gauge symmetry.}
+\phantomsection
+The potential \( A^\mu \) is not uniquely determined:
+\[
+A^\mu(x) \;\;\rightarrow\;\; A^\mu(x) + \partial^\mu \Lambda(x).
+\]
+This freedom is called \textbf{gauge symmetry}\index{Gauge symmetry} and guarantees that only
+the physically measurable quantities \( \vec{E} \)\index{Electric field} and \( \vec{B} \)\index{Magnetic field}
+are independent of the choice of potential.
+
+\medskip
+Thus, the four-potential is the central mathematical structure from which
+both classical electrodynamics and the quantized form of QED
+can be systematically developed.
+
+\section{From the Classical Field to QED}
+\label{anhangA:feld_zu_qed}
+
+Classical electrodynamics in the sense of Maxwell describes electric and 
+magnetic fields as continuous waves propagating through space\index{Maxwell's equations}\index{Maxwell, James Clerk}. 
+In this view, the electromagnetic field is a 
+\emph{deterministic solution} of Maxwell’s equations.
+
+\subsection*{Limits of the classical model.}
+\phantomsection
+Phenomena such as the photoelectric effect\index{Photoelectric effect} and Compton scattering\index{Compton scattering}
+demonstrate that light does not interact with matter in arbitrarily divisible amounts, 
+but rather in discrete energy packets \( h\nu \). 
+This points to an underlying quantum nature of the field.
+
+\subsection*{Quantization of the field.}
+\phantomsection
+Quantum electrodynamics (QED) goes beyond the classical theory by 
+\emph{quantizing} the electromagnetic field itself. Specifically:
+\begin{itemize}
+	\item The potential \( A^\mu(x) \) becomes an operator field\index{Operator field}.
+	\item Its Fourier modes are identified with creation and annihilation operators 
+	for photons\index{Creation operator}\index{Annihilation operator}.
+	\item Field states are described in Fock space\index{Fock space}, 
+	with the possibility of creating arbitrarily many photons in specified modes.
+\end{itemize}
+
+\subsection*{New perspective.}
+\phantomsection
+The photon thus appears as the \textbf{quantum of the electromagnetic field}, 
+no longer as a classical particle or wave packet. 
+Interactions such as the scattering of two electrons can be understood as 
+\emph{photon exchange}, represented mathematically by \textbf{Feynman diagrams}\index{Feynman diagrams}. 
+
+\medskip
+In this way, QED bridges classical field theory, quantum mechanics, and special relativity\index{Special relativity}. 
+It provides a consistent theoretical foundation in which the photon is described as a 
+fundamental exchange particle—a vector boson\index{Vector boson}.
+
+\section{Field Strength Tensor \(F_{\mu\nu}\)}
+\label{anhangA:feldstaerketensor}
+
+The foundation of the relativistic formulation of electrodynamics
+is the \textbf{field strength tensor} \( F_{\mu\nu} \)\index{Field strength tensor}.
+It combines the electric and magnetic fields into a 
+covariant form and is directly derived from the four-potential 
+\( A^\mu(x) \)\index{Four-potential}:
+
+\[
+F_{\mu\nu} \;=\; \partial_\mu A_\nu - \partial_\nu A_\mu .
+\]
+
+\subsection*{Properties.}
+\phantomsection
+\begin{itemize}
+	\item \( F_{\mu\nu} \) is \emph{antisymmetric}, i.e. 
+	\( F_{\mu\nu} = - F_{\nu\mu} \).  
+	\item It contains exactly six independent components, 
+	which correspond to the three components of the electric field \( \vec{E} \)\index{Electric field} 
+	and the three components of the magnetic field \( \vec{B} \)\index{Magnetic field}.
+\end{itemize}
+
+\subsection*{Matrix representation.}
+\phantomsection
+In 3+1 notation one obtains:
+
+\[
+F_{\mu\nu} = 
+\begin{pmatrix}
+	0      & -E_x & -E_y & -E_z \\
+	E_x    & 0    & -B_z & B_y \\
+	E_y    & B_z  & 0    & -B_x \\
+	E_z    & -B_y & B_x  & 0
+\end{pmatrix}.
+\]
+
+\subsection*{Lorentz covariance.}
+\phantomsection
+By its very definition, \( F_{\mu\nu} \) is a rank-two tensor
+and transforms consistently under Lorentz transformations\index{Lorentz transformation}.
+This guarantees that electric and magnetic fields
+are not independent entities, but instead transform into one another 
+depending on the observer.
+\subsection*{Physical significance.}
+\phantomsection
+\begin{itemize}
+	\item The field strength tensor is the central quantity in the 
+	Lagrangian formulation of electrodynamics\index{Electrodynamics}.
+	\item It allows for a compact representation of Maxwell’s equations\index{Maxwell's equations}\index{Maxwell, James Clerk}.
+	\item In quantum electrodynamics (QED)\index{Quantum electrodynamics (QED)} it provides the basis 
+	for defining photon fields\index{Photon field} and their interactions\index{Interaction}.
+\end{itemize}
+
+\medskip
+Thus, \( F_{\mu\nu} \) unifies the classical fields \( \vec{E} \)\index{Electric field} and \( \vec{B} \)\index{Magnetic field}
+into a single relativistically invariant structure.
+
+\section{EM Lagrangian Density and Equations of Motion}
+\label{anhangA:lagrange_em}
+
+The dynamics of the electromagnetic field can be elegantly expressed 
+through a \textbf{Lagrangian density}\index{Lagrangian density}. 
+The starting point is the field strength tensor \( F_{\mu\nu} \) 
+(see Section~\ref{anhangA:feldstaerketensor}).
+
+\subsection*{Lagrangian density.}
+\phantomsection
+The canonical form is
+\[
+\mathcal{L}_{\text{EM}} \;=\; -\tfrac{1}{4} \, F_{\mu\nu} F^{\mu\nu}.
+\]
+
+\begin{itemize}
+	\item The prefactor \(-\tfrac{1}{4}\) is necessary to obtain the correct normalization 
+	under variation.
+	\item The contracted form \(F_{\mu\nu} F^{\mu\nu}\) 
+	is a Lorentz scalar\index{Lorentz scalar}, i.e. invariant under Lorentz transformations\index{Lorentz transformation}.
+\end{itemize}
+
+\subsection*{Coupling to matter.}
+\phantomsection
+For the field to interact with charged particles, 
+an interaction term is added:
+\[
+\mathcal{L}_{\text{int}} \;=\; - j_\mu A^\mu ,
+\]
+where \( j_\mu \)\index{Four-current} is the four-current.
+
+\subsection*{Variation and field equations.}
+\phantomsection
+Applying the \textbf{principle of least action}\index{Principle of least action} to
+\[
+\mathcal{L} \;=\; -\tfrac{1}{4} F_{\mu\nu}F^{\mu\nu} - j_\mu A^\mu
+\]
+and varying with respect to the potential \( A^\mu \), one obtains:
+\[
+\partial_\nu F^{\mu\nu} \;=\; j^\mu .
+\]
+
+These are Maxwell’s equations in compact, 
+covariant form. The inhomogeneous equations
+(\( \nabla \cdot \vec{E} = \rho, \, \nabla \times \vec{B} - \tfrac{\partial \vec{E}}{\partial t} = \vec{j} \))
+are included within them.
+
+\subsection*{Homogeneous equations.}
+\phantomsection
+The remaining two Maxwell equations 
+(\( \nabla \cdot \vec{B} = 0, \, \nabla \times \vec{E} + \tfrac{\partial \vec{B}}{\partial t} = 0 \))
+follow from the definition of the field strength tensor
+and the identity
+\[
+\partial_\lambda F_{\mu\nu} + \partial_\mu F_{\nu\lambda} + \partial_\nu F_{\lambda\mu} = 0 .
+\]
+
+\medskip
+This shows that the entirety of classical electrodynamics 
+can be derived from a compact Lagrangian formulation — 
+an elegant starting point for quantization within the framework of QED.
+\section{Gauge Symmetry, Gauge Fixing,\newline and the  Lorenz Condition}
+\label{anhangA:eichsymmetrie}
+
+A central structural principle of electrodynamics is \textbf{gauge symmetry}\index{Gauge symmetry}.
+It states that the four-potential \( A^\mu(x) \) is not uniquely determined,
+but only up to a \emph{gauge transformation}:
+\[
+A^\mu(x) \;\;\rightarrow\;\; A^\mu(x) + \partial^\mu \Lambda(x),
+\]
+where \( \Lambda(x) \) is an arbitrary scalar function.
+
+\subsection*{Physical consequences.}
+\phantomsection
+\begin{itemize}
+	\item The observable fields \( \vec{E} \)\index{Electric field} and \( \vec{B} \)\index{Magnetic field} 
+	remain unchanged under this transformation.
+	\item Only gauge-invariant quantities are physically measurable.
+	\item A mass term \( \tfrac{1}{2} m^2 A_\mu A^\mu \) 
+	is not gauge invariant and is therefore excluded in QED\index{Quantum electrodynamics (QED)}.
+\end{itemize}
+
+\subsection*{Gauge freedom and degrees of freedom.}
+\phantomsection
+A vector field \( A^\mu \) has four components.  
+Gauge symmetry allows one to remove redundant degrees of freedom:
+\begin{itemize}
+	\item The gauge transformation removes one component.
+	\item The equations of motion (Lorentz invariance\index{Lorentz invariance}) remove another.
+	\item Exactly two independent degrees of freedom remain — 
+	the two transverse polarization states of the photon.
+\end{itemize}
+
+\subsection*{Gauge fixing.}
+\phantomsection
+For practical calculations one chooses a specific \emph{gauge}:
+\begin{itemize}
+	\item \textbf{Lorenz gauge:} 
+	\(\partial_\mu A^\mu = 0\)\index{Lorenz gauge}\index{Lorenz condition}\index{Lorenz, Ludvig}.  
+	It is Lorentz covariant and well-suited to relativistic formulations.
+	\item \textbf{Coulomb gauge:} 
+	\(\nabla \cdot \vec{A} = 0\)\index{Coulomb gauge}.  
+	Used frequently in quantum optics.
+\end{itemize}
+
+\subsection*{Lorenz condition.}
+\phantomsection
+In Lorenz gauge the equations of motion reduce to a wave (d’Alembert) equation:
+\[
+\square A^\mu(x) = j^\mu(x),
+\]
+with the d’Alembert operator \(\square = \partial_\mu \partial^\mu\)\index{d'Alembert operator}.
+This makes the wave nature of the electromagnetic field explicit.
+
+\medskip
+Gauge symmetry is thus not merely a mathematical convenience, 
+but the reason the photon is \textbf{massless} and has exactly two transverse polarization states.
+\newpage
+\noindent
+\section{Why the Photon Is Massless \newline (Proca Argument)}
+\label{anhangA:masselosigkeit_proca}
+
+In classical field theory one could formally add a mass term for a vector field \( A^\mu \).
+The corresponding Lagrangian density (Proca theory) is
+\[
+\mathcal{L}_{\text{Proca}} = -\tfrac{1}{4} F_{\mu\nu} F^{\mu\nu} 
++ \tfrac{1}{2} m^2 A_\mu A^\mu .
+\]\index{Proca theory}\index{Proca, Alexandru}
+
+\subsection*{Consequences of the mass term.}
+\phantomsection
+\begin{itemize}
+	\item The equations of motion are modified and yield a massive wave equation.
+	\item A massive spin-1 field has \textbf{three} independent polarization states (not two).
+	\item The propagation speed would be less than the speed of light.
+\end{itemize}
+
+\subsection*{Gauge symmetry is violated.}
+\phantomsection
+The mass term \( \tfrac{1}{2} m^2 A_\mu A^\mu \) 
+is not invariant under the gauge transformation
+\[
+A^\mu \;\to\; A^\mu + \partial^\mu \Lambda(x),
+\]
+thus breaking the fundamental \(U(1)\) gauge symmetry\index{U(1) gauge symmetry} of electrodynamics.
+
+\subsection*{Experimental evidence.}
+\phantomsection
+All observations show that:
+\begin{itemize}
+	\item electromagnetic waves always propagate at the speed of light \(c\),
+	\item the photon has only two transverse polarization states,
+	\item and no deviation from perfect masslessness has been detected.
+\end{itemize}
+Hence gauge symmetry holds exactly, and the photon has exactly zero rest mass\index{Massless particle}.
+
+\medskip
+The \textbf{Proca argument} thus shows:  
+Gauge symmetry in QED forbids a mass term and forces the photon to be massless.
+
+\section{Transversality and Helicity \( \pm 1 \)}
+\label{anhangA:transversalitaet}
+
+The photon is a massless spin-1 particle. Its physically allowed polarization states
+follow from \textbf{gauge symmetry} and \textbf{Lorentz invariance}\index{Lorentz invariance}.
+
+\subsection*{Reduction of degrees of freedom.}
+\phantomsection
+A vector field \( A^\mu \) starts with four components.
+\begin{itemize}
+	\item Gauge freedom removes one component (by a gauge choice).
+	\item The equations of motion (e.g., the Lorenz condition \( \partial_\mu A^\mu = 0 \)) remove another.
+	\item Exactly \textbf{two independent degrees of freedom} remain.
+\end{itemize}
+
+\subsection*{Transversality.}
+\phantomsection
+The two remaining polarization modes are orthogonal to the direction of propagation:
+\[
+\vec{k} \cdot \vec{\epsilon}_\lambda = 0,
+\]
+where \( \vec{k} \) is the wave vector and \( \vec{\epsilon}_\lambda \) the polarization vector\index{Transversality}\index{Polarization}.
+
+\subsection*{Helicity.}
+\phantomsection
+For a massless particle the \textbf{helicity}\index{Helicity} — the projection of spin onto the direction of motion —
+\[
+h = \frac{\vec{S} \cdot \vec{p}}{|\vec{p}|}
+\]
+is a well-defined, Lorentz-invariant quantity.  
+The photon has exactly two helicity states:
+\[
+h = +1 \quad \text{and} \quad h = -1 .
+\]
+
+\subsection*{Physical interpretation.}
+\phantomsection
+\begin{itemize}
+	\item Helicity \( +1 \): right-circularly polarized photons.
+	\item Helicity \( -1 \): left-circularly polarized photons.
+\end{itemize}
+
+\medskip
+Thus the photon is \textbf{transversely polarized} with only two possible helicities —
+a direct consequence of gauge symmetry and masslessness 
+(see Section~\ref{anhangA:masselosigkeit_proca}).
+
+\section{Virtual Photons and Unphysical \newline Modes}
+\label{anhangA:virtuelle_moden}
+
+Whereas real photons have only two transverse helicity states 
+(\( h = \pm 1 \)), \textbf{virtual photons}\index{Virtual photon} in QED can involve additional modes. 
+They appear on internal lines of Feynman diagrams and are not observable particles,
+but mathematical auxiliaries of the formalism.
+
+\subsection*{Unphysical components.}
+\phantomsection
+Photon propagators can contain, besides transverse parts,
+longitudinal or even scalar components.  
+These arise from gauge freedom and are unavoidable when one allows propagating solutions in all components.
+
+\subsection*{Consistency of the theory.}
+
+\phantomsection
+Although such unphysical modes appear in intermediate steps,
+they cancel out in all \emph{physical observables}.  
+This occurs due to:
+\begin{itemize}
+	\item the gauge invariance of the theory,
+	\item coupling only to the conserved electric current \( j^\mu \)\index{Conserved current},
+	\item and the Ward identities\index{Ward identities}, which ensure the cancellation of non-transverse contributions.
+\end{itemize}
+
+\subsection*{Example: photon propagator.}
+\phantomsection
+In Feynman gauge the photon propagator is
+\[
+D_{\mu\nu}(k) = \frac{-i g_{\mu\nu}}{k^2 + i\epsilon} ,
+\]\index{Feynman gauge}\index{Photon propagator}
+which formally includes longitudinal and time-like parts.  
+In physical amplitudes these couple in such a way that they cancel exactly.
+
+\medskip
+\textbf{Conclusion:}  
+Virtual photons are a computational device in QED.  
+They may carry seemingly unphysical modes, but gauge symmetry and current conservation 
+guarantee that only the two transverse helicity states of the photon are physically realized.
