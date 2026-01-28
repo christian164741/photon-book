@@ -1,0 +1,55 @@
+\documentclass{article}
+\usepackage[
+margin=0in,
+paperwidth=14.306in,
+paperheight=10.417in
+]{geometry}
+
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{xcolor}
+\pagestyle{empty}
+
+% --- Deine Originalgrößen (Paperback-Flächen) ---
+\newlength{\panel}   \setlength{\panel}{6.125in}
+\newlength{\panelH}  \setlength{\panelH}{9.25in}
+
+% Premiumfarbe/weiß, 229 Seiten:
+\newlength{\spine}   \setlength{\spine}{0.5375in}
+
+% --- Aus KDP-Zieldimensionen abgeleitete Außenränder ---
+% links/rechts:
+\newlength{\outerX}  \setlength{\outerX}{0.75925in} % (14.306 - (2*6.125 + 0.5375))/2
+% oben/unten:
+\newlength{\outerY}  \setlength{\outerY}{0.5835in}  % (10.417 - 9.25)/2
+
+% Farben
+\definecolor{coverblue}{HTML}{1E4A66}
+\definecolor{spinebg}{HTML}{E6D8B9}
+
+\begin{document}
+	\begin{tikzpicture}[remember picture,overlay]
+		\coordinate (SW) at (current page.south west);
+		
+		% Hintergrund vollflächig schwarz (damit kein Weiß am Rand bleibt)
+		\fill[black] (SW) rectangle ++(\paperwidth,\paperheight);
+		
+		% Rückseite
+		\node[anchor=south west, inner sep=0pt] at ($(SW)+(\outerX,\outerY)$)
+		{\includegraphics[width=\panel,height=\panelH]{rueckseite.pdf}};
+		
+		% Vorderseite
+		\node[anchor=south west, inner sep=0pt] at ($(SW)+(\outerX+\panel+\spine,\outerY)$)
+		{\includegraphics[width=\panel,height=\panelH]{vorderseite.pdf}};
+		
+		% Rücken über volle Höhe (Hardcover)
+		\fill[spinebg] ($(SW)+(\outerX+\panel,0)$) rectangle ++(\spine,\paperheight);
+		
+		% Rücken-Text (mittig im sichtbaren Bereich)
+		\node[rotate=90, align=center, text=coverblue]
+		at ($(SW)+(\outerX+\panel+0.5\spine,\outerY+0.5\panelH)$)
+		{\bfseries\normalsize Christian Weilharter \hspace*{1.0cm} \bfseries\normalsize PHOTON - THEORIE UND ANWENDUNGEN};
+		
+	\end{tikzpicture}
+\end{document}

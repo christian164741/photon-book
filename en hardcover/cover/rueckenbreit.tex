@@ -1,0 +1,57 @@
+% --- KDP-Zieldimensionen (bei dir vorher 14.306 x 10.417) ---
+% Für 221 Seiten ändert sich praktisch nur die Breite wegen Spine:
+% paperwidth = 2*outerX + 2*panel + spine
+% paperheight bleibt gleich
+
+\documentclass{article}
+\usepackage[
+margin=0in,
+paperwidth=14.306in,
+paperheight=10.417in
+]{geometry}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{xcolor}
+\pagestyle{empty}
+% --- Deine Originalgrößen (Cover-PDF-Flächen) ---
+\newlength{\panel}   \setlength{\panel}{6.125in}
+\newlength{\panelH}  \setlength{\panelH}{9.25in}
+
+% --- Rückenbreite (221 Seiten, Premium Color white) ---
+\newlength{\spine}   \setlength{\spine}{0.5187in}
+
+% --- Außenränder (neu berechnet, bleibt praktisch gleich) ---
+\newlength{\outerX}  \setlength{\outerX}{0.75925in} % (paperwidth - (2*panel + spine))/2
+\newlength{\outerY}  \setlength{\outerY}{0.5835in}  % (10.417 - 9.25)/2
+
+% Farben
+\definecolor{coverblue}{HTML}{1E4A66}
+\definecolor{spinebg}{HTML}{E6D8B9}
+
+\begin{document}
+	\begin{tikzpicture}[remember picture,overlay]
+		\coordinate (SW) at (current page.south west);
+		
+		% Hintergrund vollflächig schwarz (damit kein Weiß am Rand bleibt)
+		\fill[black] (SW) rectangle ++(\paperwidth,\paperheight);
+		
+		% Rückseite
+		\node[anchor=south west, inner sep=0pt] at ($(SW)+(\outerX,\outerY)$)
+		{\includegraphics[width=\panel,height=\panelH]{rueckseite.pdf}};
+		
+		% Vorderseite
+		\node[anchor=south west, inner sep=0pt] at ($(SW)+(\outerX+\panel+\spine,\outerY)$)
+		{\includegraphics[width=\panel,height=\panelH]{vorderseite.pdf}};
+		
+		% Rücken über volle Höhe (Hardcover)
+		\fill[spinebg] ($(SW)+(\outerX+\panel,0)$) rectangle ++(\spine,\paperheight);
+		
+		% Rücken-Text (englisch)
+		\node[rotate=90, align=center, text=coverblue]
+		at ($(SW)+(\outerX+\panel+0.5\spine,\outerY+0.5\panelH)$)
+		{\bfseries\normalsize Christian Weilharter \hspace*{1.0cm}
+			\bfseries\normalsize PHOTON - THEORY AND APPLICATIONS};
+		
+	\end{tikzpicture}
+\end{document}
