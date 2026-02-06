@@ -16,65 +16,67 @@ bottom=1.125in   % 1.000" + 0.125"
 \usepackage{ragged2e}
 \usepackage{parskip}
 \usepackage{tikz}
+\usetikzlibrary{calc}
 \usepackage{xcolor}
-\usepackage[protrusion=true,expansion=true]{microtype} % besseres Druckbild
+\usepackage[protrusion=true,expansion=true]{microtype}
 
 \setlength{\parindent}{0pt}
 
-% --- Farben (anpassbar) ---
-% \definecolor{coverblue}{HTML}{1E4A66} % z.B. Front-Titel
-\definecolor{coveraccent}{HTML}{00B7C2} % Akzent (Titel auf Rückseite)
-\definecolor{covertext}{HTML}{E6E6E6}   % Fließtext auf dunklem Grund (sehr helles Grau)
+% --- Farben ---
+\definecolor{coveraccent}{HTML}{00B7C2}
+\definecolor{covertext}{HTML}{E6E6E6}
 
 % --- Hintergrundbild (bis zum Rand, inkl. Bleed) ---
-% Ideal: 300 dpi bei 6.125"x9.25" (~1838x2775 px)
 \backgroundsetup{
 	scale=1, angle=0, opacity=1,
 	contents={\includegraphics[width=\paperwidth,height=\paperheight]{lichtspuren.png}}
 }
 
+% --- globaler Shift der gesamten Rückseite ---
+\newlength{\backShiftX}
+\setlength{\backShiftX}{-6.5mm} % <<<< 6,5mm nach links (nach rechts: +6.5mm)
+
+% (für korrekte Platzierung relativ zum Textbereich)
+\newlength{\leftMargin} \setlength{\leftMargin}{1.125in} % = inner
+\newlength{\topMargin}  \setlength{\topMargin}{0.925in} % = top
+
 \begin{document}
 	\thispagestyle{empty}\pagestyle{empty}
 	
-	% --- dezente Dunkelblende hinter dem Textblock für sichere Lesbarkeit ---
-	% Bereich grob: obere Text-Hälfte; Koordinaten bei Bedarf anpassen
+	% --- Dunkelblende hinter dem Textblock (mit Shift) ---
 	\begin{tikzpicture}[remember picture,overlay]
 		\fill[black,opacity=0.35]
-		([xshift=0.45in,yshift=7.9in]current page.south west) rectangle
-		([xshift=-0.45in,yshift=3.25in]current page.north east);
+		($([xshift=0.45in,yshift=7.9in]current page.south west)+(\backShiftX,0)$) rectangle
+		($([xshift=-0.45in,yshift=3.25in]current page.north east)+(\backShiftX,0)$);
 	\end{tikzpicture}
 	
-	% --- Textblock ---
-	{\color{coveraccent}\Large\bfseries Photon – Theory und Applications}\par
-	\vspace{-0.3em}
-	
-	{\color{covertext}
-		\linespread{1.08}\selectfont
-		\justifying
-		\sffamily % moderner Look (entfernen, wenn Serifenschrift gewünscht)
-		\noindent
-	Is a photon a wave, a particle—or both? This book takes you from the classical picture of light to quantum mechanics, showing how photons shape modern technology and fundamental research. Clear, precise, and scientifically sound.
-	
-	
-		
-		\medskip
-		\noindent
-		\textbf{For curious readers, students, and anyone who truly wants to understand physics.}
-		
-		\medskip
-		\noindent
-	\emph{Christian Weilharter, Dipl.-Ing.(FH),} combines engineering insight with a passion for science education.
-	This book bridges the gap between mathematical depth and clear explanation.
-	}% End text block
-	
-	% --- (Optional) Foto unten links ---
-	% \begin{tikzpicture}[remember picture,overlay]
-		%   \node[anchor=south west, xshift=0.475in, yshift=0.475in]
-		%     at (current page.south west)
-		%     {\includegraphics[width=1.20in]{test.png}};
-		% \end{tikzpicture}
-	
-	% --- ISBN + Barcode unten rechts mit weißer Unterlage ---
-	
+	% --- Textblock als verschobene Box (Umbruch bleibt stabil) ---
+	\begin{tikzpicture}[remember picture,overlay]
+		\node[anchor=north west, inner sep=0pt]
+		at ($ (current page.north west) + (\leftMargin+\backShiftX,-\topMargin) $)
+		{%
+			\begin{minipage}{\textwidth}
+				{\color{coveraccent}\Large\bfseries Photon – Theory and Applications}\par
+				\vspace{-0.3em}
+				
+				{\color{covertext}
+					\linespread{1.08}\selectfont
+					\RaggedRight   % <<< schöner fürs Cover, verhindert „Löcher“
+					\sffamily
+					
+					Is a photon a wave, a particle—or both? This book takes you from the classical picture of light
+					to quantum mechanics, showing how photons shape modern technology and fundamental research.
+					Clear, precise, and scientifically sound.
+					
+					\medskip
+					\textbf{For curious readers, students, and anyone who truly wants to understand physics.}
+					
+					\medskip
+					\emph{Christian Weilharter, Dipl.-Ing.(FH),} combines engineering insight with a passion for science education.
+					This book bridges the gap between mathematical depth and clear explanation.
+				}
+			\end{minipage}
+		};
+	\end{tikzpicture}
 	
 \end{document}

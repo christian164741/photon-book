@@ -21,6 +21,10 @@
 	contents={\includegraphics[width=\paperwidth,height=\paperheight]{lichtspuren.png}}
 }
 
+% --- globaler Shift der gesamten Vorderseite ---
+\newlength{\frontShiftX}
+\setlength{\frontShiftX}{6.5mm} % <<<< 6,5mm nach rechts (nach links: -6.5mm)
+
 % Safe-Area Offsets
 \newlength{\bleed}\setlength{\bleed}{0.125in}
 \newlength{\safe}\setlength{\safe}{0.35in}
@@ -32,35 +36,35 @@
 	% --- Dunkelblende (zentraler Bereich für Text) ---
 	\begin{tikzpicture}[remember picture,overlay]
 		\fill[black,opacity=0.35]
-		([xshift=0.45in,yshift=6.9in]current page.south west) rectangle
-		([xshift=-0.45in,yshift=1.3in]current page.north east);
+		($([xshift=0.45in,yshift=6.9in]current page.south west)+(\frontShiftX,0)$) rectangle
+		($([xshift=-0.45in,yshift=1.3in]current page.north east)+(\frontShiftX,0)$);
 	\end{tikzpicture}
 	
 	% --- TITLE BLOCK ---
-\begin{tikzpicture}[remember picture,overlay]
-	\node[
-	anchor=north, inner sep=0pt,
-	text width=\dimexpr\paperwidth-2\inset\relax,
-	align=center
-	] at ($(current page.north)+(0,-1.05in)$) {%
-		% Main title
-		{\color{coveraccent}\fontsize{58}{62}\selectfont\bfseries \kern0.5pt P H O T O N\par}
-		\vspace{0.5em}
-		% Subtitle
-		{\color{coveraccent}\fontsize{22}{26}\selectfont\bfseries THEORY\ AND\par}
-		\vspace{0.6em}
-		{\color{coveraccent}\fontsize{22}{26}\selectfont\bfseries APPLICATIONS\par}
-		\vspace{0.6em}
-		% Claim
-		{\color{covertext}\fontsize{15}{19}\selectfont
-			From Classical Physics to Quantum Mechanics\par}
-	};
-\end{tikzpicture}
+	\begin{tikzpicture}[remember picture,overlay]
+		\node[
+		anchor=north, inner sep=0pt,
+		text width=\dimexpr\paperwidth-2\inset\relax,
+		align=center
+		] at ($ (current page.north)+(0,-1.05in) +(\frontShiftX,0) $) {%
+			% Main title
+			{\color{coveraccent}\fontsize{58}{62}\selectfont\bfseries \kern0.5pt P H O T O N\par}
+			\vspace{0.5em}
+			% Subtitle
+			{\color{coveraccent}\fontsize{22}{26}\selectfont\bfseries THEORY\ AND\par}
+			\vspace{0.6em}
+			{\color{coveraccent}\fontsize{22}{26}\selectfont\bfseries APPLICATIONS\par}
+			\vspace{0.6em}
+			% Claim
+			{\color{covertext}\fontsize{15}{19}\selectfont
+				From Classical Physics to Quantum Mechanics\par}
+		};
+	\end{tikzpicture}
 	
-	% --- AUTOR unten ---
+	% --- AUTHOR bottom ---
 	\begin{tikzpicture}[remember picture,overlay]
 		\node[anchor=south, inner sep=0pt]
-		at ($(current page.south)+(0,\inset+0.08in)$)
+		at ($ (current page.south)+(0,\inset+0.08in) +(\frontShiftX,0) $)
 		{\color{covertext}\fontsize{18}{22}\selectfont\bfseries CHRISTIAN WEILHARTER};
 	\end{tikzpicture}
 	

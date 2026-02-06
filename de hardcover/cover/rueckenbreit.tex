@@ -11,28 +11,35 @@ paperheight=10.417in
 \usepackage{xcolor}
 \pagestyle{empty}
 
+
+
+\newlength{\hinge}
+\setlength{\hinge}{0.25in} % TEST: typisch 0.20–0.30in (exakt aus KDP-Template übernehmen!)
 % --- Deine Originalgrößen (Paperback-Flächen) ---
 \newlength{\panel}   \setlength{\panel}{6.125in}
 \newlength{\panelH}  \setlength{\panelH}{9.25in}
 
-% Premiumfarbe/weiß, 229 Seiten:
+% Hardcover Rückenbreite laut dir:
 \newlength{\spine}   \setlength{\spine}{0.5375in}
 
 % --- Aus KDP-Zieldimensionen abgeleitete Außenränder ---
-% links/rechts:
-\newlength{\outerX}  \setlength{\outerX}{0.75925in} % (14.306 - (2*6.125 + 0.5375))/2
-% oben/unten:
-\newlength{\outerY}  \setlength{\outerY}{0.5835in}  % (10.417 - 9.25)/2
-
+%\newlength{\outerX}  \setlength{\outerX}{0.75925in}
+\newlength{\outerY}  \setlength{\outerY}{0.5835in}
+\newlength{\outerX}
+\setlength{\outerX}{\dimexpr(\paperwidth-(2\panel+\spine))/2\relax}
 % Farben
 \definecolor{coverblue}{HTML}{1E4A66}
 \definecolor{spinebg}{HTML}{E6D8B9}
+
+% --- Feinjustage (nur hier drehen!) ---
+\newlength{\spineTextShiftX} \setlength{\spineTextShiftX}{0mm}    % meist 0 lassen
+\newlength{\spineTextShiftY} \setlength{\spineTextShiftY}{-2.0mm} % <<<< HIER: nach Bedarf -1mm .. -4mm
 
 \begin{document}
 	\begin{tikzpicture}[remember picture,overlay]
 		\coordinate (SW) at (current page.south west);
 		
-		% Hintergrund vollflächig schwarz (damit kein Weiß am Rand bleibt)
+		% Hintergrund vollflächig schwarz
 		\fill[black] (SW) rectangle ++(\paperwidth,\paperheight);
 		
 		% Rückseite
@@ -43,13 +50,20 @@ paperheight=10.417in
 		\node[anchor=south west, inner sep=0pt] at ($(SW)+(\outerX+\panel+\spine,\outerY)$)
 		{\includegraphics[width=\panel,height=\panelH]{vorderseite.pdf}};
 		
-		% Rücken über volle Höhe (Hardcover)
+		% Rücken (vollhöhe)
 		\fill[spinebg] ($(SW)+(\outerX+\panel,0)$) rectangle ++(\spine,\paperheight);
 		
-		% Rücken-Text (mittig im sichtbaren Bereich)
-		\node[rotate=90, align=center, text=coverblue]
-		at ($(SW)+(\outerX+\panel+0.5\spine,\outerY+0.5\panelH)$)
-		{\bfseries\normalsize Christian Weilharter \hspace*{1.0cm} \bfseries\normalsize PHOTON - THEORIE UND ANWENDUNGEN};
+		% Rücken-Text: geometrisch mittig + optischer Feintrimm per yshift
+		\node[
+		rotate=90,
+		anchor=center,
+		align=center,
+		text=coverblue,
+		text height=1.6ex,
+		text depth=.35ex
+		]
+		at ($(SW)+(\outerX+\panel+0.5\spine,0.5\paperheight)+(\spineTextShiftX,\spineTextShiftY)$)
+		{\bfseries\large Christian Weilharter \hspace*{1.0cm} PHOTON - THEORIE UND ANWENDUNGEN};
 		
 	\end{tikzpicture}
 \end{document}
