@@ -1,57 +1,97 @@
-% --- KDP-Zieldimensionen (bei dir vorher 14.306 x 10.417) ---
-% Für 221 Seiten ändert sich praktisch nur die Breite wegen Spine:
+% Hardcover-Cover für KDP
+% 6 x 9 inch, Premium Color, white paper, 221 Seiten
+%
+% Rückenbreite:
+% spine = 221 * 0.002347in = 0.5187in
+%
+% Gesamtbreite:
 % paperwidth = 2*outerX + 2*panel + spine
-% paperheight bleibt gleich
+%            = 2*0.75925 + 2*6.125 + 0.5187
+%            = 14.2872in
+%
+% Gesamthöhe:
+% paperheight = 2*outerY + panelH
+%             = 2*0.5835 + 9.25
+%             = 10.417in
 
 \documentclass{article}
+
 \usepackage[
 margin=0in,
-paperwidth=14.306in,
+paperwidth=14.2872in,
 paperheight=10.417in
 ]{geometry}
+
 \usepackage{graphicx}
 \usepackage{tikz}
 \usetikzlibrary{calc}
 \usepackage{xcolor}
+
 \pagestyle{empty}
-% --- Deine Originalgrößen (Cover-PDF-Flächen) ---
+
+% --- Cover-Flächen ---
 \newlength{\panel}   \setlength{\panel}{6.125in}
 \newlength{\panelH}  \setlength{\panelH}{9.25in}
 
-% --- Rückenbreite (221 Seiten, Premium Color white) ---
+% --- Rückenbreite: 221 Seiten, Premium Color white ---
 \newlength{\spine}   \setlength{\spine}{0.5187in}
 
-% --- Außenränder (neu berechnet, bleibt praktisch gleich) ---
-\newlength{\outerX}  \setlength{\outerX}{0.75925in} % (paperwidth - (2*panel + spine))/2
-\newlength{\outerY}  \setlength{\outerY}{0.5835in}  % (10.417 - 9.25)/2
+% --- Hardcover-Wrap / Außenbereiche ---
+\newlength{\outerX}  \setlength{\outerX}{0.75925in}
+\newlength{\outerY}  \setlength{\outerY}{0.5835in}
 
 % Farben
 \definecolor{coverblue}{HTML}{1E4A66}
 \definecolor{spinebg}{HTML}{E6D8B9}
 
 \begin{document}
+	
 	\begin{tikzpicture}[remember picture,overlay]
 		\coordinate (SW) at (current page.south west);
 		
-		% Hintergrund vollflächig schwarz (damit kein Weiß am Rand bleibt)
+		% Hintergrund vollflächig schwarz
 		\fill[black] (SW) rectangle ++(\paperwidth,\paperheight);
 		
 		% Rückseite
-		\node[anchor=south west, inner sep=0pt] at ($(SW)+(\outerX,\outerY)$)
+		\node[anchor=south west, inner sep=0pt]
+		at ($(SW)+(\outerX,\outerY)$)
 		{\includegraphics[width=\panel,height=\panelH]{rueckseite.pdf}};
 		
 		% Vorderseite
-		\node[anchor=south west, inner sep=0pt] at ($(SW)+(\outerX+\panel+\spine,\outerY)$)
+		\node[anchor=south west, inner sep=0pt]
+		at ($(SW)+(\outerX+\panel+\spine,\outerY)$)
 		{\includegraphics[width=\panel,height=\panelH]{vorderseite.pdf}};
 		
-		% Rücken über volle Höhe (Hardcover)
-		\fill[spinebg] ($(SW)+(\outerX+\panel,0)$) rectangle ++(\spine,\paperheight);
+		% Rücken über volle Hardcover-Höhe
+		\fill[spinebg]
+		($(SW)+(\outerX+\panel,0)$)
+		rectangle ++(\spine,\paperheight);
 		
-		% Rücken-Text (englisch)
+		% Rücken-Text exakt mittig im Rücken
 		\node[rotate=90, align=center, text=coverblue]
 		at ($(SW)+(\outerX+\panel+0.5\spine,\outerY+0.5\panelH)$)
 		{\bfseries\large Christian Weilharter \hspace*{1.0cm}
 			\bfseries\large PHOTON - THEORY AND APPLICATIONS};
 		
+		% --------------------------------------------------
+		% OPTIONALE KONTROLLLINIEN
+		% Zum Prüfen kurz aktivieren, vor Upload auskommentieren.
+		% --------------------------------------------------
+		% Linke Rückenlinie
+		% \draw[red, line width=0.5pt]
+		% ($(SW)+(\outerX+\panel,0)$) --
+		% ($(SW)+(\outerX+\panel,\paperheight)$);
+		%
+		% Rechte Rückenlinie
+		% \draw[red, line width=0.5pt]
+		% ($(SW)+(\outerX+\panel+\spine,0)$) --
+		% ($(SW)+(\outerX+\panel+\spine,\paperheight)$);
+		%
+		% Rückenmitte
+		% \draw[blue, line width=0.5pt]
+		% ($(SW)+(\outerX+\panel+0.5\spine,0)$) --
+		% ($(SW)+(\outerX+\panel+0.5\spine,\paperheight)$);
+		
 	\end{tikzpicture}
+	
 \end{document}
